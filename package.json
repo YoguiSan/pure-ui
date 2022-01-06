@@ -7,8 +7,8 @@
     "build": "rollup --config",
     "test": "jest",
     "start:lib": "rollup --config --watch",
-    "start": "concurrently --kill-others \"npm start:lib\" \"npm run start:test\" --prefix-colors green,yellow",
-    "start:test": "npm run install:setup-testing-environment && cd test-project && npm start",
+    "start": "npm run install:setup-testing-environment && concurrently --kill-others \"npm run start:lib\" \"npm run start:test\" --prefix-colors green,yellow",
+    "start:test": "cd test-project && npm start",
     "test:watch": "jest --config ./jest.config.js --watch",
     "commit": "git pull && git add . && git cz && git push",
     "push": "npm run commit",
@@ -38,8 +38,6 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^27.4.7",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
     "rollup": "^2.63.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -47,17 +45,28 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.3"
   },
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-is": "^17.0.2"
+  },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "commitizen": "^4.2.4",
     "concurrently": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",
+    "enzyme": "^3.11.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "jest-sonar-reporter": "^2.0.0"
   },
   "config": {
     "commitizen": {
