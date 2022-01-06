@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Message } from 'pure-ui';
+import { getRandomArrayElement } from 'formatadores';
+
+const types = [
+  'warning',
+  'error',
+  'success',
+];
+
+const texts = [
+  'This is a test',
+  'I will randomly display a message every so often, so stay sharp',
+  'Yet another test message',
+];
+
+const timeouts = [
+  5000,
+  3000,
+  1000,
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Message
+        type={getRandomArrayElement(types)}
+        text={getRandomArrayElement(texts)}
+        timeout={getRandomArrayElement(timeouts)}
+      />
     </div>
   );
 }

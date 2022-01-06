@@ -21,14 +21,14 @@
     "install:all": "npm i && npm run install:setup-testing-environment",
     "install:test": "cd test-project && npm i",
     "i:test": "npm run npm install:test",
-    "install:setup-testing-environment": "npm run install:test && cd test-project && npm i -S ../"
+    "install:setup-testing-environment": "npm run install:test && cd test-project && npm i -S ../ && cd ../ && npm run link:react",
+    "link:react": "cd test-project/node_modules/react && npm link && cd ../../../ && npm link react"
   },
   "keywords": [
     "ui",
     "pure",
     "design",
     "system",
-    "design",
     "components",
     "clean",
     "lean",
@@ -66,7 +66,12 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
-    "jest-sonar-reporter": "^2.0.0"
+    "jest-sonar-reporter": "^2.0.0",
+    "rollup-plugin-visualizer": "^5.5.2"
+  },
+  "resolutions": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "config": {
     "commitizen": {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { string, number, arrayOf } from 'prop-types';
+
 import Container from './Container';
 
 function Message({
@@ -8,9 +9,7 @@ function Message({
   timeout,
   classes,
 }) {
-  const { show, setShow } = useState(false);
-
-  const date = new Date();
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (text && type) {
@@ -19,6 +18,8 @@ function Message({
     }
   }, [text, type]);
 
+  const date = new Date();
+
   return (
     <Container
       id={`message-${date}`}
@@ -26,10 +27,10 @@ function Message({
       className={`${type}${classes?.map((className) => ` ${className}`)}`}
     >
       {
-      show
-        ? (
-          <p>{text}</p>
-        ) : ''
+        show
+          ? (
+            <p>{text}</p>
+          ) : ''
       }
     </Container>
   );
