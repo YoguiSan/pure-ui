@@ -1,4 +1,5 @@
-import { Message } from 'pure-ui';
+import React, { useState } from 'react';
+import { Message, ErrorWrapper } from 'pure-ui';
 import { getRandomArrayElement } from 'formatadores';
 
 const types = [
@@ -20,14 +21,25 @@ const timeouts = [
 ];
 
 function App() {
+  const [text, setText] = useState();
+  const [type, setType] = useState();
+  const [timeout, setMessageTimeout] = useState();
+
+  const interval = setInterval(() => {
+    setText(getRandomArrayElement(texts));
+    setType(getRandomArrayElement(types));
+    setMessageTimeout(getRandomArrayElement(timeouts));
+  }, 6000);
+
   return (
-    <div>
+    <ErrorWrapper>
+      <h1>Running...</h1>
       <Message
-        type={getRandomArrayElement(types)}
-        text={getRandomArrayElement(texts)}
-        timeout={getRandomArrayElement(timeouts)}
+        type={type}
+        text={text}
+        timeout={timeout}
       />
-    </div>
+    </ErrorWrapper>
   );
 }
 

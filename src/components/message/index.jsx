@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { string, number, arrayOf } from 'prop-types';
+import {
+  string, number, arrayOf, oneOf,
+} from 'prop-types';
 
 import Container from './Container';
 
@@ -11,10 +13,14 @@ function Message({
 }) {
   const [show, setShow] = useState(false);
 
+  const close = () => setShow(false);
+
   useEffect(() => {
     if (text && type) {
       setShow(true);
-      setTimeout(() => setShow(false), timeout);
+      if (type !== 'fatal') {
+        setTimeout(() => close(), timeout);
+      }
     }
   }, [text, type]);
 
@@ -22,9 +28,9 @@ function Message({
 
   return (
     <Container
-      id={`message-${date}`}
-      key={`message-${date}`}
-      className={`${type}${classes?.map((className) => ` ${className}`)}`}
+      id={`pure-ui-message-container-${date}`}
+      key={`pure-ui-message-container-${date}`}
+      className={`pure-ui-message-container ${type}${classes?.map((className) => ` ${className}`)}`}
     >
       {
         show
@@ -37,13 +43,21 @@ function Message({
 }
 
 Message.defaultProps = {
+  text: null,
+  type: null,
   timeout: 3000,
   classes: [],
 };
 
 Message.propTypes = {
-  text: string.isRequired,
-  type: string.isRequired,
+  text: string,
+  type: oneOf([
+    'success',
+    'info',
+    'warning',
+    'error',
+    'fatal',
+  ]),
   timeout: number,
   classes: arrayOf(string),
 };

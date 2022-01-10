@@ -2,7 +2,7 @@
   "name": "pure-ui",
   "version": "1.0.0",
   "description": "A pure and minimalistic design system, using only pure HTML elements",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "build": "rollup --config",
     "test": "jest",
@@ -21,7 +21,7 @@
     "install:all": "npm i && npm run install:setup-testing-environment",
     "install:test": "cd test-project && npm i",
     "i:test": "npm run npm install:test",
-    "install:setup-testing-environment": "npm run install:test && cd test-project && npm i -S ../ && cd ../ && npm run link:react",
+    "install:setup-testing-environment": "npm run install:test && cd test-project && npm i -S .. && cd ../ && npm run link:react",
     "link:react": "cd test-project/node_modules/react && npm link && cd ../../../ && npm link react"
   },
   "keywords": [
@@ -37,11 +37,12 @@
   "author": "Nelson Salles de Barros Filho",
   "license": "ISC",
   "dependencies": {
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "jest": "^27.4.7",
+    "react-use-error-boundary": "^0.0.6",
     "rollup": "^2.63.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "styled-components": "^5.3.3"
   },
