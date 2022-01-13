@@ -7,10 +7,10 @@ export default styles.div`
   font-family: 'Arial', sans-seriff;
   font-size: 1rem;
   font-weight: bold;
+  height: fit-content;
   max-width: 10rem;
   padding: .6rem;
   position: absolute;
-  top: 1rem;
   ${({ closeDelay }) => (closeDelay > 0
     ? (`transition: all ${closeDelay / 1000}s;`)
     : '')}
@@ -66,7 +66,23 @@ export default styles.div`
   
   }
 
-  &.top-right {
+  &.top {
+    bottom: unset;
+    top: 1rem;
+  }
+
+  &.middle {
+    bottom: 0;
+    margin: auto;
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 1rem;
+    top: unset;
+  }
+
+  &.right {
     right: 1rem;
 
     &.closing {
@@ -74,7 +90,7 @@ export default styles.div`
     }
   }
 
-  &.top-left {
+  &.left {
     left: 1rem;
 
     &.closing {
@@ -82,42 +98,10 @@ export default styles.div`
     }
   }
 
-  &.top-center {
+  &.center {
     left: 0;
     margin: auto;
     right: 0;
-
-    &.closing {
-
-    }
-  }
-
-  &.bottom-right {
-    bottom: 1rem;
-    right: 1rem;
-    top: unset;
-
-    &.closing {
-
-    }
-  }
-
-  &.bottom-left {
-    bottom: 1rem;
-    left: 1rem;
-    top: unset;
-
-    &.closing {
-
-    }
-  }
-
-  &.bottom-center {
-    bottom: 1rem;
-    left: 0;
-    margin: auto;
-    right: 0;
-    top: unset;
 
     &.closing {
 

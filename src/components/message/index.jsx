@@ -51,7 +51,7 @@ function Message({
       <Container
         id={`pure-ui-message-container-${date}`}
         key={`pure-ui-message-container-${date}`}
-        className={`${type} ${position}${classes?.map((className) => ` ${className}`)} ${closing && 'closing'}`}
+        className={`${type} ${position.split('-').join(' ')}${classes?.map((className) => ` ${className}`)} ${closing && 'closing'}`}
         closeDelay={closeDelay}
       >
         <button
