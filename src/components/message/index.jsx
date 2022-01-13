@@ -10,7 +10,7 @@ import {
 
 import Container from './Container';
 
-import { PositionOptions, TypeOptions } from './json';
+import { AnimationOptions, PositionOptions, TypeOptions } from './json';
 
 function Message({
   text,
@@ -21,9 +21,12 @@ function Message({
   closeButtonIcon,
   closeDelay = 500000,
   position,
+  openAnimation,
 }) {
   const [show, setShow] = useState(false);
   const [closing, setClosing] = useState(false);
+
+  const [closeTimeout, setCloseTimeout] = useState();
 
   let closeIcon = '✕';
   if (closeButtonIcon) {
@@ -32,14 +35,16 @@ function Message({
 
   const close = () => {
     setClosing(true);
-    setTimeout(() => setShow(false), closeDelay);
+    setCloseTimeout(setTimeout(() => setShow(false), closeDelay));
   };
 
   useEffect(() => {
+    clearTimeout(closeTimeout);
+
     if (text && type) {
-      setShow(true);
+      setTimeout(() => setShow(true), 10);
       if (type !== 'fatal') {
-        setTimeout(() => close(), timeout);
+        setCloseTimeout(setTimeout(() => close(), timeout));
       }
     }
   }, [text, type]);
@@ -53,6 +58,7 @@ function Message({
         key={`pure-ui-message-container-${date}`}
         className={`${type} ${position.split('-').join(' ')}${classes?.map((className) => ` ${className}`)} ${closing && 'closing'}`}
         closeDelay={closeDelay}
+        openAnimation={openAnimation}
       >
         <button
           id={`pure-ui-message-container-close-button-${date}`}
@@ -91,6 +97,7 @@ Message.defaultProps = {
   closeButtonIcon: null,
   closeDelay: 50000,
   position: 'top-right',
+  openAnimation: null,
 };
 
 Message.propTypes = {
@@ -102,6 +109,7 @@ Message.propTypes = {
   closeButtonIcon: element,
   closeDelay: number,
   position: oneOf(PositionOptions),
+  openAnimation: oneOf(AnimationOptions),
 };
 
 export default Message;

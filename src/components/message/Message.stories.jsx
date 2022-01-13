@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TypeOptions, PositionOptions } from './json';
+import { TypeOptions, PositionOptions, AnimationOptions } from './json';
 
 import Message from '.';
 
@@ -10,6 +10,10 @@ export default {
   argTypes: {
     type: {
       options: TypeOptions,
+      control: { type: 'radio' },
+    },
+    openAnimation: {
+      options: AnimationOptions,
       control: { type: 'radio' },
     },
     position: {
@@ -26,6 +30,11 @@ export default {
         type: 'array',
       },
     },
+    closeDelay: {
+      control: {
+        type: 'number',
+      },
+    },
   },
 };
 
@@ -38,7 +47,9 @@ function Template(args) {
 }
 
 export const message = Template.bind({});
+
 message.args = {
+  openAnimation: 'fade',
   text: 'Sample message',
   position: 'top-right',
   type: 'fatal',
@@ -46,5 +57,5 @@ message.args = {
   classes: [],
   handleClose: null,
   closeButtonIcon: null,
-  closeDelay: null,
+  closeDelay: 500,
 };
