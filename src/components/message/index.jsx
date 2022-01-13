@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import {
-  string, number, arrayOf, oneOf,
+  string,
+  number,
+  arrayOf,
+  oneOf,
+  func,
+  element,
 } from 'prop-types';
 
 import Container from './Container';
@@ -10,8 +15,15 @@ function Message({
   type,
   timeout,
   classes,
+  handleClose,
+  closeButtonIcon,
 }) {
   const [show, setShow] = useState(false);
+
+  let closeIcon = '✕';
+  if (closeButtonIcon) {
+    closeIcon = closeButtonIcon;
+  }
 
   const close = () => setShow(false);
 
@@ -24,22 +36,41 @@ function Message({
     }
   }, [text, type]);
 
-  const date = new Date();
+  const date = Date.now();
 
-  return (
-    <Container
-      id={`pure-ui-message-container-${date}`}
-      key={`pure-ui-message-container-${date}`}
-      className={`pure-ui-message-container ${type}${classes?.map((className) => ` ${className}`)}`}
-    >
-      {
-        show
-          ? (
-            <p>{text}</p>
-          ) : ''
-      }
-    </Container>
-  );
+  if (show) {
+    return (
+      <Container
+        id={`pure-ui-message-container-${date}`}
+        key={`pure-ui-message-container-${date}`}
+        className={`${type}${classes?.map((className) => ` ${className}`)}`}
+      >
+        <button
+          id={`pure-ui-message-container-close-button-${date}`}
+          key={`pure-ui-message-container-close-button-${date}`}
+          className={`close-button ${type}`}
+          type="button"
+          onClick={() => {
+            if (handleClose) {
+              handleClose();
+            } else {
+              close();
+            }
+          }}
+        >
+          {closeIcon}
+        </button>
+        <p
+          id={`pure-ui-message-container-text-${date}`}
+          key={`pure-ui-message-container-text-${date}`}
+        >
+          {text}
+        </p>
+      </Container>
+    );
+  }
+
+  return '';
 }
 
 Message.defaultProps = {
@@ -47,6 +78,8 @@ Message.defaultProps = {
   type: null,
   timeout: 3000,
   classes: [],
+  handleClose: () => null,
+  closeButtonIcon: null,
 };
 
 Message.propTypes = {
@@ -60,6 +93,8 @@ Message.propTypes = {
   ]),
   timeout: number,
   classes: arrayOf(string),
+  handleClose: func,
+  closeButtonIcon: element,
 };
 
 export default Message;
