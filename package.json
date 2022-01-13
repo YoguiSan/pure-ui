@@ -4,12 +4,11 @@
   "description": "A pure and minimalistic design system, using only pure HTML elements",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "rollup --config",
-    "test": "jest",
-    "start:lib": "rollup --config --watch",
-    "start": "npm run install:setup-testing-environment && concurrently --kill-others \"npm run start:lib\" \"npm run start:test\" --prefix-colors green,yellow",
-    "start:test": "cd test-project && npm start",
-    "test:watch": "jest --config ./jest.config.js --watch",
+    "build": "webpack -- mode production",
+    "test": "jest --config ./jest.config.js",
+    "test:watch": "npm run test -- --watch",
+    "start:lib": "webpack --mode development",
+    "start": "start-storybook --port 696 --no-manager-cache",
     "commit": "git pull && git add . && git cz && git push",
     "push": "npm run commit",
     "lint": "eslint ./**.js",
@@ -17,12 +16,7 @@
     "merge:master": "npm run merge:main",
     "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
     "prepare:husky": "husky install",
-    "publish": "git checkout main && npm publish & git checkout develop",
-    "install:all": "npm i && npm run install:setup-testing-environment",
-    "install:test": "cd test-project && npm i",
-    "i:test": "npm run npm install:test",
-    "install:setup-testing-environment": "npm run install:test && cd test-project && npm i -S .. && cd ../ && npm run link:react",
-    "link:react": "cd test-project/node_modules/react && npm link && cd ../../../ && npm link react"
+    "publish": "git checkout main && npm publish & git checkout develop"
   },
   "keywords": [
     "ui",
@@ -37,14 +31,19 @@
   "author": "Nelson Salles de Barros Filho",
   "license": "ISC",
   "dependencies": {
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.1.3",
+    "'": "file:storybook/addon-knobs/register'",
+    "@storybook/addon-controls": "^6.4.10",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/react": "^6.4.10",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
     "jest": "^27.4.7",
     "react-use-error-boundary": "^0.0.6",
-    "rollup": "^2.63.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "styled-components": "^5.3.3"
+    "storybook-addon-jsx": "^7.3.14",
+    "styled-components": "^5.3.3",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
     "prop-types": "^15.8.1",
@@ -56,6 +55,7 @@
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "babel-jest": "^27.4.6",
     "commitizen": "^4.2.4",
     "concurrently": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -67,9 +67,9 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
-    "jest-sonar-reporter": "^2.0.0",
-    "rollup-plugin-visualizer": "^5.5.2"
+    "jest-sonar-reporter": "^2.0.0"
   },
+  "setupFiles": ["./setupTests.js"],
   "resolutions": {
     "react": "17.0.2",
     "react-dom": "17.0.2"
