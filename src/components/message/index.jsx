@@ -10,6 +10,8 @@ import {
 
 import Container from './Container';
 
+import { AnimationOptions, PositionOptions, TypeOptions } from './json';
+
 function Message({
   text,
   type,
@@ -17,21 +19,32 @@ function Message({
   classes,
   handleClose,
   closeButtonIcon,
+  closeDelay = 500000,
+  position,
+  openAnimation,
 }) {
   const [show, setShow] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const [closeTimeout, setCloseTimeout] = useState();
 
   let closeIcon = '✕';
   if (closeButtonIcon) {
     closeIcon = closeButtonIcon;
   }
 
-  const close = () => setShow(false);
+  const close = () => {
+    setClosing(true);
+    setCloseTimeout(setTimeout(() => setShow(false), closeDelay));
+  };
 
   useEffect(() => {
+    clearTimeout(closeTimeout);
+
     if (text && type) {
-      setShow(true);
+      setTimeout(() => setShow(true), 10);
       if (type !== 'fatal') {
-        setTimeout(() => close(), timeout);
+        setCloseTimeout(setTimeout(() => close(), timeout));
       }
     }
   }, [text, type]);
@@ -43,7 +56,9 @@ function Message({
       <Container
         id={`pure-ui-message-container-${date}`}
         key={`pure-ui-message-container-${date}`}
-        className={`${type}${classes?.map((className) => ` ${className}`)}`}
+        className={`${type} ${position.split('-').join(' ')}${classes?.map((className) => ` ${className}`)} ${closing && 'closing'}`}
+        closeDelay={closeDelay}
+        openAnimation={openAnimation}
       >
         <button
           id={`pure-ui-message-container-close-button-${date}`}
@@ -78,23 +93,23 @@ Message.defaultProps = {
   type: null,
   timeout: 3000,
   classes: [],
-  handleClose: () => null,
+  handleClose: null,
   closeButtonIcon: null,
+  closeDelay: 50000,
+  position: 'top-right',
+  openAnimation: null,
 };
 
 Message.propTypes = {
   text: string,
-  type: oneOf([
-    'success',
-    'info',
-    'warning',
-    'error',
-    'fatal',
-  ]),
+  type: oneOf(TypeOptions),
   timeout: number,
   classes: arrayOf(string),
   handleClose: func,
   closeButtonIcon: element,
+  closeDelay: number,
+  position: oneOf(PositionOptions),
+  openAnimation: oneOf(AnimationOptions),
 };
 
 export default Message;
