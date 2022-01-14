@@ -2,7 +2,9 @@ import Styles from 'styled-components';
 
 export default Styles.div`
 display: flex;
+flex-wrap: wrap;
 width: 100%;
+
 ${({
     padding = 16,
     unit = 'px',
