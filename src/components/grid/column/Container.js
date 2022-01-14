@@ -1,46 +1,77 @@
 import Styles from 'styled-components';
 
-const widths = {
-  extraSmall: 320,
-  small: 481,
-  medium: 769,
-  large: 1025,
-  extraLarge: 1201,
-};
+import { breakpoints } from './json';
 
 const containerColumns = 12;
 const widthPerColumn = 100 / containerColumns;
 
 export default Styles.div`
-${({ justifyContent }) => `justify-content: ${justifyContent};`}
+display: flex;
 
-@media all and(max-width: ${widths.extraLarge}px) {
-  ${({ extraLarge }) => `
-  width: ${widthPerColumn * extraLarge}px;
+${({ justifyContent = 'space-around' }) => `justify-content: ${justifyContent};`}
+
+${({
+    padding = 16,
+    unit = 'px',
+    paddingTop = padding,
+    paddingBottom = padding,
+    paddingLeft = padding,
+    paddingRight = padding,
+    condensed,
+    narrow,
+    noBoxSizing,
+  }) => `
+box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
+padding: ${padding}${unit};
+${
+  !condensed
+    ? (`
+    ${paddingBottom ? `padding-bottom: ${paddingBottom}${unit};` : ''}
+      ${paddingTop ? `padding-top: ${paddingTop}${unit};` : ''}
+    `)
+    : `
+  padding-bottom: 0;
+  padding-top: 0;
+  `}
+${
+  !narrow
+    ? (`
+      ${paddingLeft ? `padding-left: ${paddingLeft}${unit};` : ''}
+      ${paddingRight ? `padding-right: ${paddingRight}${unit};` : ''}
+    `)
+    : `
+  padding-left: 0;
+  padding-right: 0;
+  `}
+`}
+
+@media (min-width: ${breakpoints.extraSmall}px) {
+  ${({ extraSmall = 12 }) => `
+  ${extraSmall ? `width: ${widthPerColumn * extraSmall}%;` : ''};
   `}
 }
 
-@media all and(max-width: ${widths.large}px) {
-  ${({ large }) => `
-  width: ${widthPerColumn * large}px;
-  `}
-}
-
-@media all and(max-width: ${widths.medium}px) {
-  ${({ medium }) => `
-  width: ${widthPerColumn * medium}px;
-  `}
-}
-
-@media all and(max-width: ${widths.small}px) {
+@media (min-width: ${breakpoints.small}px) {
   ${({ small }) => `
-  width: ${widthPerColumn * small}px;
+  ${small ? `width: ${widthPerColumn * small}%;` : ''};
   `}
 }
 
-@media all and(max-width: ${widths.extraSmall}px) {
-  ${({ extraSmall }) => `
-  width: ${widthPerColumn * extraSmall}px;
+@media (min-width: ${breakpoints.medium}px) {
+  ${({ medium }) => `
+  ${medium ? `width: ${widthPerColumn * medium}%;` : ''};
+  `}
+}
+
+@media (min-width: ${breakpoints.large}px) {
+  ${({ large }) => `
+  ${large ? `width: ${widthPerColumn * large}%;` : ''};
+  `}
+}
+
+@media (min-width: ${breakpoints.extraLarge}px) {
+  ${({ extraLarge }) => `
+  ${extraLarge ? `width: ${widthPerColumn * extraLarge}%;` : ''};
   `}
 }
 `;

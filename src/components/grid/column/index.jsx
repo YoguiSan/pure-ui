@@ -1,7 +1,8 @@
 import React from 'react';
-import { element, number } from 'prop-types';
 
 import Container from './Container';
+
+import { GridDefaultProps, GridPropTypes } from '../propTypes';
 
 function Column({
   children,
@@ -10,6 +11,14 @@ function Column({
   medium,
   large,
   extraLarge,
+  condensed,
+  narrow,
+  paddingLeft,
+  paddingRight,
+  paddingTop,
+  paddingBottom,
+  padding,
+  noBoxSizing,
 }) {
   return (
     <Container
@@ -18,27 +27,21 @@ function Column({
       medium={medium}
       large={large}
       extraLarge={extraLarge}
+      paddingLeft={paddingLeft}
+      paddingRight={paddingRight}
+      paddingTop={paddingTop}
+      paddingBottom={paddingBottom}
+      padding={padding}
+      condensed={condensed}
+      narrow={narrow}
+      noBoxSizing={noBoxSizing}
     >
       {children}
     </Container>
   );
 }
 
-Column.defaultProps = {
-  extraSmall: 12,
-  small: 12,
-  medium: 12,
-  large: 12,
-  extraLarge: 12,
-};
-
-Column.propTypes = {
-  children: element.isRequired,
-  extraSmall: number,
-  small: number,
-  medium: number,
-  large: number,
-  extraLarge: number,
-};
+Column.defaultProps = GridDefaultProps;
+Column.propTypes = GridPropTypes;
 
 export default Column;
