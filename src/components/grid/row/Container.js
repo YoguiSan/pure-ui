@@ -6,18 +6,21 @@ flex-wrap: wrap;
 width: 100%;
 
 ${({
-    padding = 16,
-    unit = 'px',
-    paddingTop = padding,
-    paddingBottom = padding,
-    paddingLeft = padding,
-    paddingRight = padding,
     condensed,
     narrow,
     noBoxSizing,
+    overflow = 'scroll',
+    padding = 16,
+    paddingBottom = padding,
+    paddingLeft = padding,
+    paddingRight = padding,
+    paddingTop = padding,
+    unit = 'px',
   }) => `
   box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
+  overflow: ${overflow}
   padding: ${padding}${unit};
+
   ${
   !condensed
     ? (`
