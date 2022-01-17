@@ -8,7 +8,7 @@ const Container = styled(({
   children,
   ...props
 }) => createElement(tag, props, children))`
-${({ tag }) => styles[tag]}
+${({ tag }) => styles && styles[tag] && styles[tag]}
 font-family: 'Arial', sans-serif;
 width: 100%;
 `;
