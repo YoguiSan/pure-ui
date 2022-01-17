@@ -9,7 +9,7 @@ ${({
     condensed,
     narrow,
     noBoxSizing,
-    overflow = 'scroll',
+    overflow = 'visible',
     padding = 16,
     paddingBottom = padding,
     paddingLeft = padding,
@@ -18,7 +18,7 @@ ${({
     unit = 'px',
   }) => `
   box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
-  overflow: ${overflow}
+  overflow: ${overflow};
   padding: ${padding}${unit};
 
   ${

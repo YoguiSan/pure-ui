@@ -17,7 +17,7 @@ export const GridDefaultProps = {
   condensed: false,
   narrow: false,
   noBoxSizing: false,
-  overflow: 'scroll',
+  overflow: 'visible',
   padding: 16,
   paddingBottom: 16,
   paddingLeft: 16,

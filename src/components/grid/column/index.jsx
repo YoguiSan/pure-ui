@@ -17,7 +17,7 @@ function Column({
   paddingRight,
   paddingTop,
   paddingBottom,
-  padding,
+  padding = 16,
   noBoxSizing,
 }) {
   return (

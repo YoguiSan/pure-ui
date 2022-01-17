@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Column from '.';
+import Title from '../../title';
 
 import { GridExampleParameters, GridParameters } from '../storyParameters';
 
@@ -42,7 +43,9 @@ function Template(args) {
     <Column
       {...args}
     >
-      <h1>This is a column</h1>
+      <Title
+        text="This is a column"
+      />
     </Column>
   );
 }

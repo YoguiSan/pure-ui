@@ -5,6 +5,7 @@ A simple design system made with pure HTML tags and styled-components. This is s
 ## To do
 
 - [x] Message
+- [x] Title
 - [ ] Button
 - [ ] Grid (row and column too)
 - [ ] Loader (modal and inline)

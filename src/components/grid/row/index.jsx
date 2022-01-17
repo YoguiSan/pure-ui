@@ -9,7 +9,7 @@ function Row({
   narrow,
   noBoxSizing,
   overflow,
-  padding,
+  padding = 16,
   paddingBottom,
   paddingLeft,
   paddingRight,

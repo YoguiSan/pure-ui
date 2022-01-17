@@ -54,9 +54,4 @@ export const GridExampleParameters = {
   ...GridDefaultProps,
   condensed: false,
   narrow: false,
-  padding: null,
-  paddingLeft: null,
-  paddingRight: null,
-  paddingTop: null,
-  paddingBottom: null,
 };
