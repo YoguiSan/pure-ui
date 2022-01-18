@@ -1,3 +1,8 @@
-[
-  "fade"
-]
+{
+  "open": [
+    "fadeIn"
+  ],
+  "close": [
+    "fadeOut"
+  ]
+}

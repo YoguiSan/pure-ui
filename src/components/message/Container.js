@@ -1,13 +1,17 @@
 import styles from 'styled-components';
 
-const green = '#37ba07';
-const blue = '#49c9e3';
-const yellow = '#f5bf42';
-const red = '#bf3e1b';
-const fatalRed = '#e34949';
+import { Colors } from './json';
+
+const {
+  info: lightBlue,
+  success: green,
+  warning: yellow,
+  error: red,
+  fatal: fatalRed,
+} = Colors;
 
 const openAnimationFade = `
-@keyframes fade {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -17,17 +21,49 @@ const openAnimationFade = `
 }
 `;
 
+const closeAnimationFade = `
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+`;
+
 const openAnimationOptions = {
-  fade: openAnimationFade,
+  fadeIn: openAnimationFade,
+};
+
+const closeAnimationOptions = {
+  fadeOut: closeAnimationFade,
 };
 
 export default styles.div`
-  ${({ openAnimation }) => (openAnimation
+  ${openAnimationFade}
+  ${closeAnimationFade}
+
+  ${({ openAnimation, openDelay = 200 }) => (openAnimation
     ? `
     ${openAnimationOptions[openAnimation]}
-    animation: ${openAnimation};`
+    animation: ${openAnimation};
+    animation-duration: ${openDelay / 1000}s;`
     : '')}
-  ${openAnimationFade}
+
+  ${({
+    closeAnimation,
+    openDelay = 200,
+    closeDelay = openDelay,
+  }) => (closeAnimation
+    ? `
+    ${closeAnimationOptions[closeAnimation]}
+    &.closing {
+      animation: ${closeAnimation};
+      animation-duration: ${closeDelay / 1000}s;
+    }`
+    : '')}
+
   ${({ closeDelay }) => (closeDelay > 0
     ? (`animation-duration: ${closeDelay / 1000}s;`)
     : '')}
@@ -79,8 +115,8 @@ export default styles.div`
     }
     
     &.info {
-      border: solid 2px ${blue};
-      color: ${blue};
+      border: solid 2px ${lightBlue};
+      color: ${lightBlue};
     }
   }
 
@@ -105,7 +141,7 @@ export default styles.div`
   }
   
   &.info {
-    background: ${blue};
+    background: ${lightBlue};
   }
 
   &.top {
@@ -136,10 +172,6 @@ export default styles.div`
       left: -1rem;
       right: unset;
     }
-
-    &.closing {
-      transform: translateX(100%);
-    }
   }
 
   &.left {
@@ -150,10 +182,6 @@ export default styles.div`
     left: 0;
     margin: auto;
     right: 0;
-
-    &.closing {
-
-    }
   }
 }
 `;

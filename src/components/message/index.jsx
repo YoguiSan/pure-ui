@@ -6,6 +6,7 @@ import {
   oneOf,
   func,
   element,
+  bool,
 } from 'prop-types';
 
 import Container from './Container';
@@ -22,6 +23,8 @@ function Message({
   closeDelay = 500000,
   position,
   openAnimation,
+  closeAnimation,
+  show: showProp,
 }) {
   const [show, setShow] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -34,31 +37,41 @@ function Message({
   }
 
   const close = () => {
-    setClosing(true);
+    if (!showProp) {
+      setClosing(true);
+    }
     setCloseTimeout(setTimeout(() => setShow(false), closeDelay));
   };
 
   useEffect(() => {
+    if (showProp && closeTimeout) {
+      clearTimeout(closeTimeout);
+    }
+  }, [showProp]);
+
+  useEffect(() => {
+    setClosing(false);
     clearTimeout(closeTimeout);
 
     if (text && type) {
-      setTimeout(() => setShow(true), 10);
-      if (type !== 'fatal') {
-        setCloseTimeout(setTimeout(() => close(), timeout));
+      setShow(true);
+      if (!showProp && type !== 'fatal') {
+        setCloseTimeout(setTimeout(() => (handleClose ? handleClose() : close()), timeout));
       }
     }
   }, [text, type]);
 
   const date = Date.now();
 
-  if (show) {
+  if (showProp || show) {
     return (
       <Container
         id={`pure-ui-message-container-${date}`}
         key={`pure-ui-message-container-${date}`}
-        className={`${type} ${position.split('-').join(' ')}${classes?.map((className) => ` ${className}`)} ${closing && 'closing'}`}
+        className={`${type} ${position.split('-').join(' ')}${classes?.map((className) => ` ${className}`)} ${!showProp && closing && 'closing'}`}
         closeDelay={closeDelay}
         openAnimation={openAnimation}
+        closeAnimation={closeAnimation}
       >
         <button
           id={`pure-ui-message-container-close-button-${date}`}
@@ -97,7 +110,9 @@ Message.defaultProps = {
   closeButtonIcon: null,
   closeDelay: 50000,
   position: 'top-right',
-  openAnimation: null,
+  openAnimation: 'fadeIn',
+  closeAnimation: 'fadeOut',
+  show: false,
 };
 
 Message.propTypes = {
@@ -109,7 +124,9 @@ Message.propTypes = {
   closeButtonIcon: element,
   closeDelay: number,
   position: oneOf(PositionOptions),
-  openAnimation: oneOf(AnimationOptions),
+  openAnimation: oneOf(AnimationOptions.open),
+  closeAnimation: oneOf(AnimationOptions.close),
+  show: bool,
 };
 
 export default Message;

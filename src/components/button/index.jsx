@@ -1,5 +1,7 @@
 import React from 'react';
-import { element, oneOf, string, func } from 'prop-types';
+import {
+  element, oneOf, string, func,
+} from 'prop-types';
 
 import Container from './Container';
 

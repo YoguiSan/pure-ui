@@ -1,1 +1,1 @@
-export { default as variants } from './variants.json';
+export { default as variants } from './variants';
