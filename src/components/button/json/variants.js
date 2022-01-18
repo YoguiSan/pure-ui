@@ -3,22 +3,23 @@ export default {
   background: none;
   border: none;
 
-  &.hover {
+  &:hover {
     background: #f2f2f2;
-    opacity: .8;
+    opacity: .7;
   }
   `,
   contained: `
-  &.hover {
-    opacity: .8;
+  &:hover {
+    opacity: .7;
   }
   `,
   outlined: `
   background: none;
   border: solid 2px;
 
-  &.hover {
-    opacity: .8;
+  &:hover {
+    background: #f2f2f2;
+    opacity: .7;
   }
   `,
 };

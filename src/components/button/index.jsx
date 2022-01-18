@@ -8,17 +8,19 @@ import Container from './Container';
 import { variants } from './json';
 
 function Button({
-  variant,
+  variant = 'text',
   type = 'button',
-  color,
+  color = 'primary',
   text,
   icon,
+  fontColor,
   onClick,
 }) {
   return (
     <Container
       variant={variant}
       color={color}
+      fontColor={fontColor}
     >
       <button
         type={type}
@@ -34,6 +36,7 @@ function Button({
 Button.defaultProps = {
   type: 'button',
   color: 'primary',
+  fontColor: undefined,
   variant: 'text',
   icon: null,
 };
@@ -41,6 +44,7 @@ Button.defaultProps = {
 Button.propTypes = {
   variant: oneOf(Object.keys(variants)),
   color: string,
+  fontColor: string,
   type: string,
   text: string.isRequired,
   icon: element,
