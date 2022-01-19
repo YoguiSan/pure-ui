@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import styled from 'styled-components';
 
-import styles from './assets/json';
+import { styles } from './assets/json';
 
 const Container = styled(({
   tag,

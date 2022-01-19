@@ -8,8 +8,11 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    library: '',
+    library: 'pure-ui',
     libraryTarget: 'commonjs',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [new CleanWebpackPlugin()],
   module: {
@@ -19,8 +22,20 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+          options: {
+            presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+          },
         },
+      }, {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
       },
     ],
   },

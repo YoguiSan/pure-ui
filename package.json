@@ -4,7 +4,7 @@
   "description": "A pure and minimalistic design system, using only pure HTML elements",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "webpack -- mode production",
+    "build": "webpack --mode production",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm run test -- --watch",
     "start:lib": "webpack --mode development",
@@ -68,7 +68,8 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
-    "jest-sonar-reporter": "^2.0.0"
+    "jest-sonar-reporter": "^2.0.0",
+    "url-loader": "^4.1.1"
   },
   "setupFiles": [
     "./setupTests.js"
