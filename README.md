@@ -7,8 +7,11 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [x] Message
 - [x] Title
 - [X] Button
+- [X] Loader (modal and inline)
+- [ ] Menu
+- [ ] Carousel
+- [ ] Card
 - [ ] Grid (row and column too)
-- [ ] Loader (modal and inline)
 - [ ] Error wrapper
 - [ ] Accordion
 - [ ] Dropdown
@@ -17,7 +20,6 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [ ] Phone input
 - [ ] Email input
 - [ ] TextArea
-- [ ] Menu
 - [ ] Table
 - [ ] File uploader
 - [ ] Form
