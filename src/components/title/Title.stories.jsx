@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from '.';
 
-import { tags } from './json';
+import { tags } from './assets/json';
 
 export default {
   title: 'Title component',

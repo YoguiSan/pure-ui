@@ -11,7 +11,7 @@ import {
 
 import Container from './Container';
 
-import { AnimationOptions, PositionOptions, TypeOptions } from './json';
+import { AnimationOptions, PositionOptions, TypeOptions } from './assets/json';
 
 function Message({
   text,

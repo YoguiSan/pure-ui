@@ -3,7 +3,7 @@ import { element, oneOf, string } from 'prop-types';
 
 import Container from './Container';
 
-import { tags } from './json';
+import { tags } from './assets/json';
 
 function Title({
   type,

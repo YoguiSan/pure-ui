@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from '.';
 
-import { variants } from './json';
+import { variants } from './assets/json';
 
 export default {
   title: 'Button component',
@@ -17,7 +17,6 @@ export default {
     type: {
       control: {
         type: 'radio',
-        // options: Object.keys(variants)
       },
     },
     color: {

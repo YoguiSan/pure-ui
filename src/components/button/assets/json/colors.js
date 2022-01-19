@@ -1,4 +1,4 @@
-import { Colors } from '../../assets/json';
+import { Colors } from '../../../assets/json/index';
 
 const colors = {};
 

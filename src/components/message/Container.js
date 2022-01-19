@@ -1,6 +1,6 @@
 import styles from 'styled-components';
 
-import { Colors } from './json';
+import { Colors } from './assets/json';
 
 const {
   info: lightBlue,

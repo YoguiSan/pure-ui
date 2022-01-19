@@ -1,6 +1,6 @@
 import Styles from 'styled-components';
 
-import { breakpoints } from './json';
+import { breakpoints } from './assets/json';
 
 const containerColumns = 12;
 const widthPerColumn = 100 / containerColumns;

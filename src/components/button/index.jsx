@@ -5,7 +5,7 @@ import {
 
 import Container from './Container';
 
-import { variants } from './json';
+import { variants } from './assets/json';
 
 function Button({
   variant = 'text',

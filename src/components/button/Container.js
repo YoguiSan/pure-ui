@@ -3,7 +3,7 @@ import Styles from 'styled-components';
 import {
   variants,
   colors,
-} from './json';
+} from './assets/json';
 
 export default Styles.div`
 > button {

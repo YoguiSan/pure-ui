@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TypeOptions, PositionOptions, AnimationOptions } from './json';
+import { TypeOptions, PositionOptions, AnimationOptions } from './assets/json';
 
 import Message from '.';
 
