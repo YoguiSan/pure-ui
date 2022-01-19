@@ -33,7 +33,6 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [ ] Radio button
 - [ ] Checkbox
 - [ ] Modal
-- [ ] Modal
 - [ ] Tag
 - [ ] Toggle
 - [ ] Tooltip
