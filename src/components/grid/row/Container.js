@@ -16,10 +16,22 @@ ${({
     paddingRight = padding,
     paddingTop = padding,
     unit = 'px',
+    noAutoResize,
   }) => `
+  ${!noAutoResize && `
+  * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  `}
   box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
   overflow: ${overflow};
   padding: ${padding}${unit};
+
+  * {
+    max-height: 100%;
+    max-width: 100%;
+  }
 
   ${
   !condensed

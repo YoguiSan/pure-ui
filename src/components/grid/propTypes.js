@@ -1,4 +1,9 @@
-import { bool, element, number, string } from 'prop-types';
+import {
+  bool,
+  element,
+  number,
+  string,
+} from 'prop-types';
 
 export const GridPropTypes = {
   children: element.isRequired,
@@ -11,6 +16,7 @@ export const GridPropTypes = {
   paddingLeft: number,
   paddingRight: number,
   paddingTop: number,
+  noAutoResize: bool,
 };
 
 export const GridDefaultProps = {
@@ -23,4 +29,5 @@ export const GridDefaultProps = {
   paddingLeft: 16,
   paddingRight: 16,
   paddingTop: 16,
+  noAutoResize: false,
 };

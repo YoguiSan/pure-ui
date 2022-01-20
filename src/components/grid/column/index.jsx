@@ -19,6 +19,7 @@ function Column({
   paddingBottom,
   padding = 16,
   noBoxSizing,
+  noAutoResize,
 }) {
   return (
     <Container
@@ -35,6 +36,7 @@ function Column({
       condensed={condensed}
       narrow={narrow}
       noBoxSizing={noBoxSizing}
+      noAutoResize={noAutoResize}
     >
       {children}
     </Container>
