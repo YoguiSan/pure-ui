@@ -2,7 +2,7 @@
   "name": "pure-ui",
   "version": "1.0.0",
   "description": "A pure and minimalistic design system, using only pure HTML elements",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "test": "jest --config ./jest.config.js",
