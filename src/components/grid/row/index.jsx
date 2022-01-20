@@ -14,7 +14,7 @@ function Row({
   paddingLeft,
   paddingRight,
   paddingTop,
-  noAutoResize,
+  allowOverflow,
 }) {
   return (
     <Container
@@ -27,7 +27,7 @@ function Row({
       paddingLeft={paddingLeft}
       paddingRight={paddingRight}
       paddingTop={paddingTop}
-      noAutoResize={noAutoResize}
+      allowOverflow={allowOverflow}
     >
       {children}
     </Container>

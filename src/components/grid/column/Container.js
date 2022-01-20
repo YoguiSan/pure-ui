@@ -21,9 +21,9 @@ ${({
     condensed,
     narrow,
     noBoxSizing,
-    noAutoResize,
+    allowOverflow,
   }) => `
-  ${!noAutoResize && `
+  ${!allowOverflow && `
   * {
     max-width: 100%;
     max-height: 100%;

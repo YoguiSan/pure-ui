@@ -19,7 +19,7 @@ function Column({
   paddingBottom,
   padding = 16,
   noBoxSizing,
-  noAutoResize,
+  allowOverflow,
 }) {
   return (
     <Container
@@ -36,7 +36,7 @@ function Column({
       condensed={condensed}
       narrow={narrow}
       noBoxSizing={noBoxSizing}
-      noAutoResize={noAutoResize}
+      allowOverflow={allowOverflow}
     >
       {children}
     </Container>

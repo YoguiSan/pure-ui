@@ -16,7 +16,7 @@ export const GridPropTypes = {
   paddingLeft: number,
   paddingRight: number,
   paddingTop: number,
-  noAutoResize: bool,
+  allowOverflow: bool,
 };
 
 export const GridDefaultProps = {
@@ -29,5 +29,5 @@ export const GridDefaultProps = {
   paddingLeft: 16,
   paddingRight: 16,
   paddingTop: 16,
-  noAutoResize: false,
+  allowOverflow: false,
 };
