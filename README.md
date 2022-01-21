@@ -4,14 +4,15 @@ A simple design system made with pure HTML tags and styled-components. This is s
 
 ## To do
 
+- [X] Grid (row and column too)
 - [x] Message
 - [x] Title
 - [X] Button
 - [X] Loader (modal and inline)
-- [ ] Menu
+- [X] Image
+- [X] Menu
 - [ ] Carousel
 - [ ] Card
-- [ ] Grid (row and column too)
 - [ ] Error wrapper
 - [ ] Accordion
 - [ ] Dropdown

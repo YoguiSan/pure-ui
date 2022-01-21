@@ -1,0 +1,1 @@
+export { default as TopMenuDefaultProps } from './defaultProps.json';
