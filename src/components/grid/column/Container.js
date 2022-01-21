@@ -1,12 +1,13 @@
 import Styles from 'styled-components';
 
-import { breakpoints } from './json';
+import { breakpoints } from './assets/json';
 
 const containerColumns = 12;
 const widthPerColumn = 100 / containerColumns;
 
 export default Styles.div`
 display: flex;
+flex-wrap: wrap;
 
 ${({ justifyContent = 'space-around' }) => `justify-content: ${justifyContent};`}
 
@@ -20,20 +21,27 @@ ${({
     condensed,
     narrow,
     noBoxSizing,
+    allowOverflow,
   }) => `
-box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
-padding: ${padding}${unit};
-${
+  ${!allowOverflow && `
+  * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  `}
+  box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
+  padding: ${padding}${unit};
+  ${
   !condensed
     ? (`
-    ${paddingBottom ? `padding-bottom: ${paddingBottom}${unit};` : ''}
-      ${paddingTop ? `padding-top: ${paddingTop}${unit};` : ''}
-    `)
+      ${paddingBottom ? `padding-bottom: ${paddingBottom}${unit};` : ''}
+        ${paddingTop ? `padding-top: ${paddingTop}${unit};` : ''}
+      `)
     : `
   padding-bottom: 0;
   padding-top: 0;
   `}
-${
+  ${
   !narrow
     ? (`
       ${paddingLeft ? `padding-left: ${paddingLeft}${unit};` : ''}

@@ -17,8 +17,9 @@ function Column({
   paddingRight,
   paddingTop,
   paddingBottom,
-  padding,
+  padding = 16,
   noBoxSizing,
+  allowOverflow,
 }) {
   return (
     <Container
@@ -35,6 +36,7 @@ function Column({
       condensed={condensed}
       narrow={narrow}
       noBoxSizing={noBoxSizing}
+      allowOverflow={allowOverflow}
     >
       {children}
     </Container>

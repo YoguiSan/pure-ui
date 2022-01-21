@@ -2,9 +2,9 @@
   "name": "pure-ui",
   "version": "1.0.0",
   "description": "A pure and minimalistic design system, using only pure HTML elements",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "webpack -- mode production",
+    "build": "webpack --mode production",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm run test -- --watch",
     "start:lib": "webpack --mode development",
@@ -37,6 +37,7 @@
     "@storybook/react": "^6.4.10",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
+    "formatadores": "^1.5.2",
     "jest": "^27.4.7",
     "react-use-error-boundary": "^0.0.6",
     "storybook-addon-jsx": "^7.3.14",
@@ -67,9 +68,12 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
-    "jest-sonar-reporter": "^2.0.0"
+    "jest-sonar-reporter": "^2.0.0",
+    "url-loader": "^4.1.1"
   },
-  "setupFiles": ["./setupTests.js"],
+  "setupFiles": [
+    "./setupTests.js"
+  ],
   "resolutions": {
     "react": "17.0.2",
     "react-dom": "17.0.2"

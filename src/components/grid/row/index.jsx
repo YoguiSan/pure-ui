@@ -5,25 +5,29 @@ import { GridDefaultProps, GridPropTypes } from '../propTypes';
 
 function Row({
   children,
-  paddingTop,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  padding,
   condensed,
   narrow,
   noBoxSizing,
+  overflow,
+  padding = 16,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  paddingTop,
+  allowOverflow,
 }) {
   return (
     <Container
+      condensed={condensed}
+      overflow={overflow}
+      narrow={narrow}
+      noBoxSizing={noBoxSizing}
+      padding={padding}
+      paddingBottom={paddingBottom}
       paddingLeft={paddingLeft}
       paddingRight={paddingRight}
       paddingTop={paddingTop}
-      paddingBottom={paddingBottom}
-      padding={padding}
-      condensed={condensed}
-      narrow={narrow}
-      noBoxSizing={noBoxSizing}
+      allowOverflow={allowOverflow}
     >
       {children}
     </Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Row from '.';
+import Title from '../../title';
 import Column from '../column';
 
 import { GridParameters, GridExampleParameters } from '../storyParameters';
@@ -17,13 +18,14 @@ function Template(args) {
       <Row
         {...args}
       >
-        <h1>This is a row</h1>
+        <Title text="This is a row" />
+        <Title type="subtitle" text="You can use columns inside of it (oh really?)" />
       </Row>
       <Row
         {...args}
       >
         <Column extraSmall={12}>
-          <h1>This is a row with columns</h1>
+          <Title text="This is a row with columns" />
         </Column>
         <Column
           extraSmall={5}

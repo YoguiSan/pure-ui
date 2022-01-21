@@ -1,3 +1,5 @@
+import { GridDefaultProps } from './propTypes';
+
 export const GridParameters = {
   paddingLeft: {
     control: {
@@ -34,14 +36,22 @@ export const GridParameters = {
       type: 'boolean',
     },
   },
+  overflow: {
+    control: {
+      options: [
+        'scroll',
+        'hidden',
+        'visible',
+        'auto',
+        'inherit',
+      ],
+      type: 'radio',
+    },
+  },
 };
 
 export const GridExampleParameters = {
-  paddingLeft: null,
-  paddingRight: null,
-  paddingTop: null,
-  paddingBottom: null,
-  padding: null,
+  ...GridDefaultProps,
   condensed: false,
   narrow: false,
 };

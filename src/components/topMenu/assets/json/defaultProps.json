@@ -1,0 +1,9 @@
+{
+  "menuBorderBottom": "#ccc",
+  "menuItemBackground": "white",
+  "menuItemBorder": null,
+  "menuItemColor": "black",
+  "menuItemBackgroundHover": "#eee",
+  "menuItemBorderHover": null,
+  "menuItemColorHover": "#222"
+}

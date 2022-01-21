@@ -6,18 +6,33 @@ flex-wrap: wrap;
 width: 100%;
 
 ${({
-    padding = 16,
-    unit = 'px',
-    paddingTop = padding,
-    paddingBottom = padding,
-    paddingLeft = padding,
-    paddingRight = padding,
     condensed,
     narrow,
     noBoxSizing,
+    overflow = 'visible',
+    padding = 16,
+    paddingBottom = padding,
+    paddingLeft = padding,
+    paddingRight = padding,
+    paddingTop = padding,
+    unit = 'px',
+    allowOverflow,
   }) => `
+  ${!allowOverflow && `
+  * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  `}
   box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
+  overflow: ${overflow};
   padding: ${padding}${unit};
+
+  * {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
   ${
   !condensed
     ? (`
