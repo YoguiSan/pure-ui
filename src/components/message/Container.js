@@ -1,4 +1,5 @@
 import styles from 'styled-components';
+import { Fonts } from '../assets/json';
 
 import { Colors } from './assets/json';
 
@@ -70,7 +71,7 @@ export default styles.div`
   background: black;
   border-radius: .2rem;
   color: white;
-  font-family: 'Arial', sans-seriff;
+  ${Fonts.default}
   font-size: 1rem;
   font-weight: bold;
   height: fit-content;
