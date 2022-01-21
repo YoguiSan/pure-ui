@@ -55,6 +55,7 @@ function TopMenu({
       menuItemBorderHover={menuItemBorderHover}
       menuItemColorHover={menuItemColorHover}
       unit={unit}
+      menuItemWidth={menuItemWidth}
     >
       <ul>{menu}</ul>
     </Container>
