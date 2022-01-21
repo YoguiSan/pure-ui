@@ -1,7 +1,6 @@
 import React from 'react';
-import { number, oneOf } from 'prop-types';
 import {
-  object, objectOf, string,
+  object, objectOf, string, number, oneOf,
 } from 'prop-types';
 
 import { TopMenuDefaultProps } from './assets/json';
@@ -31,7 +30,7 @@ const iterateMenuObject = (menuObject) => {
 };
 
 function TopMenu({
-  menuItems,
+  menuItems = {},
   menuItemFontSize = TopMenuDefaultProps.menuItemFontSize,
   menuBorderBottom = TopMenuDefaultProps.menuBorderBottom,
   menuItemBackground = TopMenuDefaultProps.menuItemBackground,
