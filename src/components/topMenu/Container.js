@@ -22,10 +22,16 @@ ${({
   }) => (menuItemFontSize ? `font-size: ${menuItemFontSize}${unit};` : '')}
 
 > ul {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   position: relative;
   max-height: 3rem;
+  width: 100%;
+
+  > li {
+    width: ${(({ menuItemWidth, unit = 'px' }) => (menuItemWidth ? `${menuItemWidth}${unit}` : '8rem'))};
+  }
 
   a {
     margin: auto;
@@ -45,7 +51,6 @@ ${({
   &, & ul {
     list-style-type: none;
     margin: 0;
-    width: ${(({ menuItemWidth, unit = 'px' }) => (menuItemWidth ? `${menuItemWidth}${unit}` : '8rem'))};
   ${({
     menuItemBackground,
     menuItemBorder,
