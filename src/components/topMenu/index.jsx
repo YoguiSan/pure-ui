@@ -14,7 +14,7 @@ const iterateMenuObject = (menuObject) => {
   Object.keys(menuObject).forEach((menuItem) => {
     if (typeof (menuObject[menuItem]) === 'object') {
       menu.push(
-        <li>
+        <li key={`${menuItem}-${Date.now()}`}>
           {menuItem}
           <ul>
             {iterateMenuObject(menuObject[menuItem])}
@@ -22,7 +22,7 @@ const iterateMenuObject = (menuObject) => {
         </li>,
       );
     } else {
-      menu.push(<li><a href={menuObject[menuItem]}>{menuItem}</a></li>);
+      menu.push(<li key={`${menuItem}-${Date.now()}`}><a href={menuObject[menuItem]}>{menuItem}</a></li>);
     }
   });
 
