@@ -1,9 +1,11 @@
+import React from 'react';
+import { number, oneOf } from 'prop-types';
 import {
   object, objectOf, string,
 } from 'prop-types';
 
-import React from 'react';
 import { TopMenuDefaultProps } from './assets/json';
+import { Units } from '../assets/json';
 
 import Container from './Container';
 
@@ -30,6 +32,7 @@ const iterateMenuObject = (menuObject) => {
 
 function TopMenu({
   menuItems,
+  menuItemFontSize = TopMenuDefaultProps.menuItemFontSize,
   menuBorderBottom = TopMenuDefaultProps.menuBorderBottom,
   menuItemBackground = TopMenuDefaultProps.menuItemBackground,
   menuItemBorder,
@@ -37,11 +40,13 @@ function TopMenu({
   menuItemBackgroundHover = TopMenuDefaultProps.menuItemBackgroundHover,
   menuItemBorderHover,
   menuItemColorHover = TopMenuDefaultProps.menuItemColorHover,
+  unit = TopMenuDefaultProps.unit,
 }) {
   const menu = iterateMenuObject(menuItems);
 
   return (
     <Container
+      menuItemFontSize={menuItemFontSize}
       menuBorderBottom={menuBorderBottom}
       menuItemBackground={menuItemBackground}
       menuItemBorder={menuItemBorder}
@@ -49,6 +54,7 @@ function TopMenu({
       menuItemBackgroundHover={menuItemBackgroundHover}
       menuItemBorderHover={menuItemBorderHover}
       menuItemColorHover={menuItemColorHover}
+      unit={unit}
     >
       <ul>{menu}</ul>
     </Container>
@@ -66,6 +72,8 @@ TopMenu.propTypes = {
   menuItemBackgroundHover: string,
   menuItemBorderHover: string,
   menuItemColorHover: string,
+  menuItemFontSize: number,
+  unit: oneOf(Units),
 };
 
 export default TopMenu;

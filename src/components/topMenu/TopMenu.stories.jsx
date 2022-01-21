@@ -5,6 +5,9 @@ import Column from '../grid/column';
 import TopMenu from '.';
 
 import { TopMenuDefaultProps } from './assets/json';
+import { Units } from '../assets/json';
+
+const assembleUrl = (component) => `/?path=/story/${component}-component`;
 
 export default {
   title: 'TopMenu component',
@@ -18,6 +21,11 @@ export default {
     menuBorderBottom: {
       control: {
         type: 'text',
+      },
+    },
+    menuItemFontSize: {
+      control: {
+        type: 'number',
       },
     },
     menuItemBackground: {
@@ -50,6 +58,12 @@ export default {
         type: 'text',
       },
     },
+    unit: {
+      control: {
+        type: 'radio',
+        options: Units,
+      },
+    },
   },
 };
 
@@ -66,14 +80,22 @@ export const topMenu = Template.bind({});
 topMenu.args = {
   ...TopMenuDefaultProps,
   menuItems: {
-    Início: 'inicio',
-    Páginas: {
-      História: 'historia',
-      Sobre: 'sobre',
-      Contato: {
-        Email: 'email',
-        Telefone: 'phone',
+    Home: '/',
+    'Structure Components': {
+      Grid: {
+        Row: assembleUrl('row'),
+        Column: assembleUrl('column'),
       },
+    },
+    'Interaction Components': {
+      Button: assembleUrl('button'),
+    },
+    'Media components': {
+      Image: assembleUrl('image'),
+    },
+    'Feedback components': {
+      Loader: assembleUrl('loader'),
+      Message: assembleUrl('message'),
     },
   },
 };

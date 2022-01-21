@@ -5,5 +5,7 @@
   "menuItemColor": "black",
   "menuItemBackgroundHover": "#eee",
   "menuItemBorderHover": null,
-  "menuItemColorHover": "#222"
+  "menuItemColorHover": "#222",
+  "menuItemFontSize": 1,
+  "unit": "rem"
 }
