@@ -33,6 +33,7 @@ function TopMenu({
   menuItems = {},
   menuItemFontSize = TopMenuDefaultProps.menuItemFontSize,
   menuBorderBottom = TopMenuDefaultProps.menuBorderBottom,
+  menuItemWidth,
   menuItemBackground = TopMenuDefaultProps.menuItemBackground,
   menuItemBorder,
   menuItemColor = TopMenuDefaultProps.menuItemColor,
@@ -64,6 +65,7 @@ TopMenu.defaultProps = TopMenuDefaultProps;
 
 TopMenu.propTypes = {
   menuItems: (string || objectOf(string || object)).isRequired,
+  menuItemWidth: number,
   menuBorderBottom: string,
   menuItemBackground: string,
   menuItemBorder: string,

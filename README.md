@@ -6,9 +6,9 @@ A simple design system made with pure HTML tags and styled-components. This is s
 
 - [X] Grid (row and column too)
 - [x] Message
-- [x] Title
-- [X] Button
 - [X] Loader (modal and inline)
+- [X] Button
+- [x] Title
 - [X] Image
 - [X] Menu
 - [ ] Carousel

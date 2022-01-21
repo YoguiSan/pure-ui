@@ -17,9 +17,9 @@ transition: all .2s;
 
 ${Fonts.default}
 ${({
-  menuItemFontSize,
-  unit = 'px',
-}) => menuItemFontSize ? `font-size: ${menuItemFontSize}${unit};` : ''}
+    menuItemFontSize,
+    unit = 'px',
+  }) => (menuItemFontSize ? `font-size: ${menuItemFontSize}${unit};` : '')}
 
 > ul {
   display: flex;
@@ -45,7 +45,7 @@ ${({
   &, & ul {
     list-style-type: none;
     margin: 0;
-    width: 8rem;
+    width: ${(({ menuItemWidth, unit = 'px' }) => (menuItemWidth ? `${menuItemWidth}${unit}` : '8rem'))};
   ${({
     menuItemBackground,
     menuItemBorder,

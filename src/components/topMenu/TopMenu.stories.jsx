@@ -23,6 +23,11 @@ export default {
         type: 'text',
       },
     },
+    menuItemWidth: {
+      control: {
+        type: 'number',
+      },
+    },
     menuItemFontSize: {
       control: {
         type: 'number',
