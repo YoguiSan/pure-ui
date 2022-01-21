@@ -6,6 +6,7 @@ import Message from './components/message';
 import Loader from './components/loader';
 import Button from './components/button';
 import Title from './components/title';
+import TopMenu from './components/topMenu';
 
 const PureUI = {
   Grid,
@@ -15,6 +16,7 @@ const PureUI = {
   Loader,
   Button,
   Title,
+  TopMenu,
 };
 
 export default PureUI;
