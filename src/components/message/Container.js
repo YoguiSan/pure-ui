@@ -42,6 +42,10 @@ const closeAnimationOptions = {
 };
 
 export default styles.div`
+&, > * {
+  margin: 0;
+}
+
   ${openAnimationFade}
   ${closeAnimationFade}
 

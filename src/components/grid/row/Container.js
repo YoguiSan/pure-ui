@@ -5,6 +5,10 @@ display: flex;
 flex-wrap: wrap;
 width: 100%;
 
+&, > * {
+  margin: 0;
+}
+
 ${({
     condensed,
     narrow,

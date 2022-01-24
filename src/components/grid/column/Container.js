@@ -9,6 +9,10 @@ export default Styles.div`
 display: flex;
 flex-wrap: wrap;
 
+> * {
+  margin: 0;
+}
+
 ${({ justifyContent = 'space-around' }) => `justify-content: ${justifyContent};`}
 
 ${({

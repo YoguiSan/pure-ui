@@ -1,6 +1,9 @@
 import React from 'react';
 import { number, string } from 'prop-types';
+
 import Container from './Container';
+
+import { ImageDefaultProps } from './assets/json';
 
 function Image({
   width,
@@ -9,12 +12,14 @@ function Image({
   caption,
   captionBackground = 'black',
   captionColor = 'white',
+  backgroundImage,
 }) {
   return (
     <Container
       width={width}
       captionBackground={captionBackground}
       captionColor={captionColor}
+      backgroundImage={backgroundImage}
     >
       <img alt={alt} src={src} />
       {caption && (
@@ -24,12 +29,7 @@ function Image({
   );
 }
 
-Image.defaultProps = {
-  width: null,
-  caption: null,
-  captionBackground: 'black',
-  captionColor: 'white',
-};
+Image.defaultProps = ImageDefaultProps;
 
 Image.propTypes = {
   width: number,
@@ -38,6 +38,7 @@ Image.propTypes = {
   src: string.isRequired,
   captionBackground: string,
   captionColor: string,
+  backgroundImage: string,
 };
 
 export default Image;
