@@ -12,6 +12,7 @@ position: fixed;
 height: fit-content;
 width: 97%;
 top: 0;
+z-index: 1000;
 
 margin: 0 auto;
 
@@ -80,6 +81,8 @@ ${({
     flex-direction: column;
     padding: .6rem;
     position: relative;
+
+    text-align: center;
 
     > ul {
       display: none;
