@@ -8,12 +8,12 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [x] Message
 - [X] Loader (modal and inline)
 - [X] Button
-- [x] Title
 - [X] Image
+- [x] Title
 - [X] Menu
+- [X] Card
 - [ ] Carousel
 - [ ] Footer
-- [ ] Card
 - [ ] Error wrapper
 - [ ] Accordion
 - [ ] Dropdown
