@@ -1,1 +1,1 @@
-export { default as ImageDefaultProps } from './props.json';
+export { default as ImageDefaultProps } from './defaultProps.json';

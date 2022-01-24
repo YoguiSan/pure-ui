@@ -44,6 +44,11 @@ export default {
         type: 'number',
       },
     },
+    imageBackground: {
+      control: {
+        type: 'text',
+      },
+    },
   },
 };
 

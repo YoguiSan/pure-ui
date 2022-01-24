@@ -2,7 +2,7 @@ import React from 'react';
 
 import Title from '.';
 
-import { tags } from './assets/json';
+import { align, tags, TitleDefaultProps } from './assets/json';
 
 export default {
   title: 'Title component',
@@ -19,6 +19,12 @@ export default {
         options: Object.keys(tags),
       },
     },
+    align: {
+      control: {
+        type: 'radio',
+        options: align,
+      },
+    },
   },
 };
 
@@ -29,12 +35,14 @@ function Template(args) {
         {...args}
       />
       <Title
-        text="Your subtitle here"
+        text="Your subtitle here, aligned to the center"
         type="subtitle"
+        align="center"
       />
       <Title
-        text="Even smaller subtitles?"
+        text="Even smaller subtitles? This time aligned to the right"
         type={3}
+        align="right"
       />
       <Title
         text="Really?"
@@ -55,6 +63,8 @@ function Template(args) {
 export const title = Template.bind({});
 
 title.args = {
+  ...TitleDefaultProps,
   text: 'Your ad here',
   type: 'title',
+  align: 'left',
 };
