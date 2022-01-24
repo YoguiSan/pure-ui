@@ -17,6 +17,7 @@ export const GridPropTypes = {
   paddingRight: number,
   paddingTop: number,
   allowOverflow: bool,
+  justifyContent: string,
 };
 
 export const GridDefaultProps = {
@@ -30,4 +31,5 @@ export const GridDefaultProps = {
   paddingRight: 16,
   paddingTop: 16,
   allowOverflow: false,
+  justifyContent: 'space-around',
 };

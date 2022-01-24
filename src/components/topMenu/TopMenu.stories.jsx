@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Row from '../grid/row';
-import Column from '../grid/column';
+import Grid, { Row, Column } from '../grid';
 import TopMenu from '.';
 
 import { TopMenuDefaultProps } from './assets/json';
@@ -13,6 +12,11 @@ export default {
   title: 'TopMenu component',
   component: TopMenu,
   argTypes: {
+    background: {
+      control: {
+        type: 'text',
+      },
+    },
     menuItems: {
       control: {
         type: 'object',
@@ -74,9 +78,19 @@ export default {
 
 function Template(args) {
   return (
-    <TopMenu
-      {...args}
-    />
+    <>
+      <TopMenu
+        {...args}
+      />
+      <Grid>
+        <Row>
+          <Column
+            justifyContent="normal" extraSmall={12}>
+            <p>Check out this top menu. It's great for layout components</p>
+          </Column>
+        </Row>
+      </Grid>
+    </>
   );
 }
 

@@ -12,6 +12,7 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [x] Title
 - [X] Menu
 - [X] Card
+- [ ] Divider
 - [ ] Carousel
 - [ ] Footer
 - [ ] Error wrapper

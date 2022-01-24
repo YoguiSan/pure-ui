@@ -5,6 +5,8 @@ import { Fonts } from '../assets/json';
 const menuStyles = '';
 
 export default Styles.header`
+${({ background = 'white' }) => `background: ${background};`}
+
 border-bottom: ${({ menuBorderBottom }) => `solid 1px ${menuBorderBottom}`};
 position: fixed;
 height: fit-content;

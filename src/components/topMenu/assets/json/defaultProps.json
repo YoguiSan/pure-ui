@@ -8,5 +8,6 @@
   "menuItemBorderHover": null,
   "menuItemColorHover": "#222",
   "menuItemFontSize": 1,
-  "unit": "rem"
+  "unit": "rem",
+  "background": "white"
 }
