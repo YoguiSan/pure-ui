@@ -27,6 +27,16 @@ export default {
         type: 'text',
       },
     },
+    menuDropdownBackground: {
+      control: {
+        type: 'text',
+      },
+    },
+    menuDropdownColor: {
+      control: {
+        type: 'text',
+      },
+    },
     menuItemWidth: {
       control: {
         type: 'number',
@@ -85,7 +95,9 @@ function Template(args) {
       <Grid>
         <Row>
           <Column
-            justifyContent="normal" extraSmall={12}>
+            justifyContent="normal"
+            extraSmall={12}
+          >
             <p>Check out this top menu. It's great for layout components</p>
           </Column>
         </Row>

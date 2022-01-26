@@ -48,6 +48,14 @@ ${({
 
     top: 100%;
 
+  ${({
+    menuDropdownBackground = 'white',
+    menuDropdownColor = 'black',
+  }) => `
+    background: ${menuDropdownBackground};
+    color: ${menuDropdownColor};
+    `}
+
     margin: 0 auto;
   }
 

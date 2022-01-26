@@ -35,9 +35,11 @@ function TopMenu({
   menuBorderBottom = TopMenuDefaultProps.menuBorderBottom,
   menuItemWidth,
   menuItemBackground = TopMenuDefaultProps.menuItemBackground,
+  menuItemBackgroundHover = TopMenuDefaultProps.menuItemBackgroundHover,
   menuItemBorder,
   menuItemColor = TopMenuDefaultProps.menuItemColor,
-  menuItemBackgroundHover = TopMenuDefaultProps.menuItemBackgroundHover,
+  menuDropdownBackground = TopMenuDefaultProps.menuDropdownBackground,
+  menuDropdownColor = TopMenuDefaultProps.menuDropdownColor,
   menuItemBorderHover,
   menuItemColorHover = TopMenuDefaultProps.menuItemColorHover,
   unit = TopMenuDefaultProps.unit,
@@ -49,6 +51,8 @@ function TopMenu({
     <Container
       menuItemFontSize={menuItemFontSize}
       menuBorderBottom={menuBorderBottom}
+      menuDropdownBackground={menuDropdownBackground}
+      menuDropdownColor={menuDropdownColor}
       menuItemBackground={menuItemBackground}
       menuItemBorder={menuItemBorder}
       menuItemColor={menuItemColor}
@@ -71,6 +75,8 @@ TopMenu.propTypes = {
   menuItemWidth: number,
   menuBorderBottom: string,
   menuItemBackground: string,
+  menuDropdownBackground: string,
+  menuDropdownColor: string,
   menuItemBorder: string,
   menuItemColor: string,
   menuItemBackgroundHover: string,

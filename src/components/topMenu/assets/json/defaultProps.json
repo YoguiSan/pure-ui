@@ -1,5 +1,7 @@
 {
   "menuBorderBottom": "#ccc",
+  "menuDropdownBackground": "white",
+  "menuDropdownColor": "black",
   "menuItemBackground": "white",
   "menuItemWidth": null,
   "menuItemBorder": null,
