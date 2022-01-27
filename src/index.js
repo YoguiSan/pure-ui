@@ -5,6 +5,8 @@ export { default as Column } from './components/grid/column';
 export { default as Message } from './components/message';
 export { default as Loader } from './components/loader';
 export { default as Button } from './components/button';
+export { default as ProgressBar } from './components/progressBar';
+
 export { default as Image } from './components/figure';
 
 export { default as Title } from './components/title';
