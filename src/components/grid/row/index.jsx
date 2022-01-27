@@ -15,6 +15,7 @@ function Row({
   paddingRight,
   paddingTop,
   allowOverflow,
+  justifyContent,
 }) {
   return (
     <Container
@@ -28,6 +29,7 @@ function Row({
       paddingRight={paddingRight}
       paddingTop={paddingTop}
       allowOverflow={allowOverflow}
+      justifyContent={justifyContent}
     >
       {children}
     </Container>

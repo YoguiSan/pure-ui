@@ -1,1 +1,1 @@
-export { default as breakpoints } from './breakpoints.json';
+export { Breakpoints as breakpoints } from '../../../../assets/json';

@@ -2,8 +2,10 @@ import {
   bool,
   element,
   number,
+  oneOf,
   string,
 } from 'prop-types';
+import { JustifyContentOptions } from './assets/json';
 
 export const GridPropTypes = {
   children: element.isRequired,
@@ -17,7 +19,7 @@ export const GridPropTypes = {
   paddingRight: number,
   paddingTop: number,
   allowOverflow: bool,
-  justifyContent: string,
+  justifyContent: oneOf(JustifyContentOptions),
 };
 
 export const GridDefaultProps = {

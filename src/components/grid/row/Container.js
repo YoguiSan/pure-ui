@@ -21,6 +21,7 @@ ${({
     paddingTop = padding,
     unit = 'px',
     allowOverflow,
+    justifyContent,
   }) => `
   ${!allowOverflow && `
   * {
@@ -31,6 +32,8 @@ ${({
   box-sizing: ${noBoxSizing ? 'content=box' : 'border-box'};
   overflow: ${overflow};
   padding: ${padding}${unit};
+
+  ${justifyContent ? `justify-content: ${justifyContent};` : ''}
 
   * {
     max-height: 100%;

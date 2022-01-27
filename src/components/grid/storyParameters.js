@@ -1,4 +1,5 @@
 import { GridDefaultProps } from './propTypes';
+import { JustifyContentOptions } from './assets/json';
 
 export const GridParameters = {
   paddingLeft: {
@@ -45,6 +46,12 @@ export const GridParameters = {
         'auto',
         'inherit',
       ],
+      type: 'radio',
+    },
+  },
+  justifyContent: {
+    control: {
+      options: JustifyContentOptions,
       type: 'radio',
     },
   },
