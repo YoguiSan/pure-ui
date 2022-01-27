@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { number, oneOf, string } from 'prop-types';
 
 import Container from './Container';
@@ -12,11 +12,15 @@ function ProgressBar({
   text,
   transitionDuration = 1000,
 }) {
+  const [currentProgress, setCurrentProgress] = useState(0);
+
+  useEffect(() => setCurrentProgress(progress), [progress]);
+
   return (
     <Container
       variant={variant}
       type={type}
-      progress={progress < 100 ? progress : 100}
+      progress={currentProgress < 100 ? currentProgress : 100}
       transitionDuration={transitionDuration}
     >
       <div className="pure-ui-progress-bar">

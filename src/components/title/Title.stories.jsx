@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Title from '.';
+import { Units } from '../assets/json';
 
-import { align, tags, TitleDefaultProps } from './assets/json';
+import { align, iconPositions, tags, TitleDefaultProps } from './assets/json';
 
 export default {
   title: 'Title component',
@@ -23,6 +24,33 @@ export default {
       control: {
         type: 'radio',
         options: align,
+      },
+    },
+    icon: {
+      control: {
+        type: 'text',
+      },
+    },
+    iconWidth: {
+      control: {
+        type: 'number',
+      },
+    },
+    iconHeight: {
+      control: {
+        type: 'number',
+      },
+    },
+    iconPosition: {
+      control: {
+        type: 'radio',
+        options: iconPositions,
+      },
+    },
+    unit: {
+      control: {
+        type: 'radio',
+        options: Units,
       },
     },
   },
@@ -67,4 +95,8 @@ title.args = {
   text: 'Your ad here',
   type: 'title',
   align: 'left',
+  icon: 'http://simpleicon.com/wp-content/uploads/icon2.png',
+  iconHeight: 1,
+  iconWidth: 1,
+  unit: 'rem',
 };

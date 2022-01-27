@@ -39,6 +39,11 @@ export default {
         type: 'text',
       },
     },
+    height: {
+      control: {
+        type: 'number',
+      },
+    },
     width: {
       control: {
         type: 'number',
@@ -47,6 +52,11 @@ export default {
     imageBackground: {
       control: {
         type: 'text',
+      },
+    },
+    styles: {
+      control: {
+        type: 'object',
       },
     },
   },

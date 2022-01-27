@@ -1,5 +1,10 @@
 {
   "type": "title",
   "children": null,
-  "align": "left"
+  "align": "left",
+  "icon": null,
+  "iconPosition": "right",
+  "iconHeight": null,
+  "iconWidth": null,
+  "unit": "px"
 }

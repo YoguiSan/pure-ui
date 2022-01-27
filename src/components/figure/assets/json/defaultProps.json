@@ -1,7 +1,9 @@
 {
+  "height": null,
   "width": null,
   "caption": null,
   "captionBackground": "black",
   "captionColor": "white",
-  "backgroundImage": null
+  "backgroundImage": null,
+  "styles": {}
 }

@@ -5,7 +5,9 @@ import { Fonts } from '../assets/json';
 export default Styles.figure`
 overflow: hidden;
 position: relative;
-width: ${({ width }) => (width ? `${width}%` : '100%')};
+height: ${({ height, unit = 'px' }) => (height ? `${height}${unit}` : '100%')};
+width: ${({ width, unit = 'px' }) => (width ? `${width}${unit}` : '100%')};
+${({ styles }) => Object.keys(styles).map((param) => `${param}: ${styles[param]};`)}
 
 ${({ backgroundImage }) => (
     backgroundImage
