@@ -7,8 +7,10 @@ export default Styles.div`
   ${({
     padding,
     unit = 'px',
+    styles,
   }) => `
   padding: ${padding}${unit};
+  ${Object.keys(styles).map((prop) => `${prop}: ${styles[prop]};`)}
   `}
 
   figure {

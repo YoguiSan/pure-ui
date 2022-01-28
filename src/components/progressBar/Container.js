@@ -20,7 +20,10 @@ width: 100%;
     progress,
     type = 'info',
     transitionDuration = 1000,
+    styles,
   }) => `
+  ${Object.keys(styles).map((prop) => `${prop}: ${styles[prop]};`)}
+
   background: ${Colors[type]};
   display: flex;
   height: fit-content;

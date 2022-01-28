@@ -2,5 +2,6 @@
   "type": "primary",
   "variant": "plain",
   "text": null,
-  "transitionDuration": 1000
+  "transitionDuration": 1000,
+  "styles": {}
 }

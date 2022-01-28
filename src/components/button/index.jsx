@@ -1,26 +1,28 @@
 import React from 'react';
 import {
-  element, oneOf, string, func,
+  element, oneOf, string, func, objectOf,
 } from 'prop-types';
 
 import Container from './Container';
 
-import { variants } from './assets/json';
+import { ButtonDefaultProps, variants } from './assets/json';
 
 function Button({
-  variant = 'text',
-  type = 'button',
-  color = 'primary',
-  text,
-  icon,
-  fontColor,
-  onClick,
+  variant = ButtonDefaultProps.variant,
+  type = ButtonDefaultProps.type,
+  color = ButtonDefaultProps.color,
+  text = ButtonDefaultProps.text,
+  icon = ButtonDefaultProps.icon,
+  fontColor = ButtonDefaultProps.fontColor,
+  onClick = ButtonDefaultProps.onClick,
+  styles = ButtonDefaultProps.styles,
 }) {
   return (
     <Container
       variant={variant}
       color={color}
       fontColor={fontColor}
+      styles={styles}
     >
       <button
         type={type}
@@ -33,13 +35,7 @@ function Button({
   );
 }
 
-Button.defaultProps = {
-  type: 'button',
-  color: 'primary',
-  fontColor: undefined,
-  variant: 'text',
-  icon: null,
-};
+Button.defaultProps = ButtonDefaultProps;
 
 Button.propTypes = {
   variant: oneOf(Object.keys(variants)),
@@ -49,6 +45,7 @@ Button.propTypes = {
   text: string.isRequired,
   icon: element,
   onClick: func.isRequired,
+  styles: objectOf(),
 };
 
 export default Button;

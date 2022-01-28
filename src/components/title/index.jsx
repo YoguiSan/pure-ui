@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  element, oneOf, string, number,
+  element, oneOf, string, number, objectOf,
 } from 'prop-types';
 
 import Container from './Container';
@@ -10,15 +10,16 @@ import { align as Align, tags, TitleDefaultProps } from './assets/json';
 import { Units } from '../assets/json';
 
 function Title({
-  type,
-  text,
-  children,
-  align,
-  icon,
-  iconPosition = 'right',
-  iconHeight,
-  iconWidth,
-  unit = 'px',
+  type = TitleDefaultProps.type,
+  text = TitleDefaultProps.text,
+  children = TitleDefaultProps.children,
+  align = TitleDefaultProps.align,
+  icon = TitleDefaultProps.icon,
+  iconPosition = TitleDefaultProps.iconPosition,
+  iconHeight = TitleDefaultProps.iconHeight,
+  iconWidth = TitleDefaultProps.iconWidth,
+  unit = TitleDefaultProps.unit,
+  styles = TitleDefaultProps.styles,
 }) {
   const tag = tags[type];
 
@@ -39,6 +40,7 @@ function Title({
       align={align}
       lineHeight={iconHeight}
       unit={unit}
+      styles={styles}
     >
       {icon && iconPosition === 'left' && logoComponent}
       {text}
@@ -60,6 +62,7 @@ Title.propTypes = {
   iconHeight: number,
   iconWidth: number,
   unit: oneOf(Units),
+  styles: objectOf(),
 };
 
 export default Title;

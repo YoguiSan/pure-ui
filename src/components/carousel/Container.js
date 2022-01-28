@@ -9,6 +9,9 @@ position: relative;
 
 overflow: hidden;
 
+${(({ styles }) => Object.keys(styles).map((prop) => `${prop}: ${styles[prop]};`))}
+${(({ customStyles }) => Object.keys(customStyles).map((prop) => `${prop}: ${customStyles[prop]};`))}
+
 > figure {
   height: fit-content;
   width: fit-content;

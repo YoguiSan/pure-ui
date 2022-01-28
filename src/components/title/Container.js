@@ -13,6 +13,7 @@ const Container = styled(({
 display: flex;
 ${({ tag }) => styles && styles[tag] && styles[tag]}
 ${({ lineHeight, unit = 'px' }) => `line-height: ${lineHeight}${unit};`}
+${(({ styles: customStyles }) => Object.keys(customStyles).map((prop) => `${prop}: ${customStyles[prop]};`))}
 
 ${Fonts.default}
 

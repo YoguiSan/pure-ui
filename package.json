@@ -16,7 +16,8 @@
     "merge:master": "npm run merge:main",
     "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
     "prepare:husky": "husky install",
-    "publish": "git checkout main && npm publish & git checkout develop"
+    "publish": "git checkout main && npm publish & git checkout develop",
+    "increase-memory": "cross-env NODE_OPTIONS=--max_old_space_size=8192"
   },
   "keywords": [
     "ui",
@@ -59,6 +60,7 @@
     "babel-jest": "^27.4.6",
     "commitizen": "^4.2.4",
     "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "enzyme": "^3.11.0",
     "eslint": "^8.6.0",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   arrayOf, oneOfType, shape, string, number, func,
+  objectOf,
 } from 'prop-types';
 
 import Container from './Container';
@@ -11,9 +12,10 @@ import Grid, { Row, Column } from '../grid';
 import { CarouselDefaultProps } from './assets/json';
 
 function Carousel({
-  images,
-  current,
-  setCurrent,
+  images = CarouselDefaultProps.images,
+  current = CarouselDefaultProps.current,
+  setCurrent = CarouselDefaultProps.setCurrent,
+  styles: customStyles = CarouselDefaultProps.styles,
 }) {
   const [active, setActive] = useState(2);
   const [imageComponents, setImageComponents] = useState([]);
@@ -38,7 +40,7 @@ function Carousel({
       },
     };
 
-    return imageArray.map(
+    const components = imageArray.map(
       (image, index) => (
         typeof (image) === 'object'
           ? (
@@ -70,6 +72,8 @@ function Carousel({
           )
       ),
     );
+
+    return components;
   };
 
   useEffect(() => {
@@ -81,7 +85,9 @@ function Carousel({
   useEffect(() => setImageComponents(assembleComponents(images)), [active]);
 
   return (
-    <Container>
+    <Container
+      styles={customStyles}
+    >
       <Grid>
         <Row>
           <Column extraSmall={12}>
@@ -141,6 +147,7 @@ Carousel.propTypes = {
   ).isRequired,
   current: number,
   setCurrent: func,
+  styles: objectOf(),
 };
 
 export default Carousel;

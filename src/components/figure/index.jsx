@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  number, string, shape, oneOf,
+  number, string, oneOf, objectOf,
 } from 'prop-types';
 
 import Container from './Container';
@@ -50,7 +50,7 @@ Image.propTypes = {
   captionBackground: string,
   captionColor: string,
   backgroundImage: string,
-  styles: shape(),
+  styles: objectOf(),
   unit: oneOf(Units),
 };
 

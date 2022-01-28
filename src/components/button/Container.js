@@ -14,7 +14,9 @@ export default Styles.div`
     animationTime = 0.3,
     color = 'primary',
     fontColor = (variant === 'contained' ? 'white' : 'black'),
+    styles,
   }) => `
+    ${Object.keys(styles).map((prop) => `${prop}: ${styles[prop]};`)}
     border: solid 2px ${fontColor};
     border-radius: .3rem;
     color: ${fontColor};

@@ -19,6 +19,8 @@ margin: 0 auto;
 transition: all .2s;
 
 ${Fonts.default}
+${(({ styles }) => Object.keys(styles).map((prop) => `${prop}: ${styles[prop]};`))}
+
 ${({
     menuItemFontSize,
     unit = 'px',

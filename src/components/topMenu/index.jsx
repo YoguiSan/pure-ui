@@ -44,6 +44,7 @@ function TopMenu({
   menuItemColorHover = TopMenuDefaultProps.menuItemColorHover,
   unit = TopMenuDefaultProps.unit,
   background = TopMenuDefaultProps.background,
+  styles = TopMenuDefaultProps.styles,
 }) {
   const menu = iterateMenuObject(menuItems);
 
@@ -62,6 +63,7 @@ function TopMenu({
       unit={unit}
       menuItemWidth={menuItemWidth}
       background={background}
+      styles={styles}
     >
       <ul>{menu}</ul>
     </Container>
@@ -85,6 +87,7 @@ TopMenu.propTypes = {
   menuItemFontSize: number,
   unit: oneOf(Units),
   background: string,
+  styles: objectOf(),
 };
 
 export default TopMenu;
