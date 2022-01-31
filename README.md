@@ -13,7 +13,7 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [X] Menu
 - [X] Card
 - [X] Progress bar
-- [ ] Carousel
+- [X] Carousel
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper

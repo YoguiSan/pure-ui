@@ -12,3 +12,4 @@ export { default as Image } from './components/figure';
 export { default as Title } from './components/title';
 export { default as TopMenu } from './components/topMenu';
 export { default as Card } from './components/card';
+export { default as Carousel } from './components/carousel';
