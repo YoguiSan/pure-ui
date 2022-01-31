@@ -43,6 +43,7 @@ function Carousel({
         typeof (image) === 'object'
           ? (
             <Image
+              key={`image-${index + 1}`}
               alt={image.alt}
               src={image.src}
               caption={image.caption}
@@ -93,12 +94,18 @@ function Carousel({
             <Button
               variant="outlined"
               color="primary"
+              padding={2}
+              styles={{
+                'font-weight': 'bold',
+              }}
+              text="&#8592;"
             />
           </Column>
           <Column extraSmall={10}>
             {
               images.map((img, index) => (
                 <Column
+                  key={`button-column-${index + 1}`}
                   extraSmall={1}
                   narrow
                   condensed
@@ -110,6 +117,11 @@ function Carousel({
                         ? () => (setCurrent && setCurrent(index)) || setActive(index)
                         : () => null
                     }
+                    padding={0}
+                    styles={{
+                      width: '1rem',
+                      height: '1rem',
+                    }}
                   />
                 </Column>
               ))
@@ -119,6 +131,11 @@ function Carousel({
             <Button
               variant="outlined"
               color="secondary"
+              padding={2}
+              styles={{
+                'font-weight': 'bold',
+              }}
+              text="&#8594;"
             />
           </Column>
         </Row>
