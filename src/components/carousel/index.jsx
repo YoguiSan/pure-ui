@@ -15,7 +15,7 @@ function Carousel({
   current,
   setCurrent,
 }) {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
   const [imageComponents, setImageComponents] = useState([]);
 
   const assembleComponents = (imageArray) => {
@@ -99,6 +99,9 @@ function Carousel({
                 'font-weight': 'bold',
               }}
               text="&#8592;"
+              onClick={() => (
+                active > 0 ? setActive(active - 1) : setActive(imageComponents.length - 1)
+              )}
             />
           </Column>
           <Column extraSmall={10}>
@@ -136,6 +139,9 @@ function Carousel({
                 'font-weight': 'bold',
               }}
               text="&#8594;"
+              onClick={() => (
+                active < imageComponents.length - 1 ? setActive(active + 1) : setActive(0)
+              )}
             />
           </Column>
         </Row>
