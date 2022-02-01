@@ -9,6 +9,7 @@ import Button from '../button';
 import Grid, { Row, Column } from '../grid';
 
 import { CarouselDefaultProps } from './assets/json';
+import { Breakpoints } from '../assets/json';
 
 function Carousel({
   images,
@@ -81,6 +82,29 @@ function Carousel({
 
   useEffect(() => setImageComponents(assembleComponents(images)), [active]);
 
+  const phoneBreakpoint = `@media (max-width: ${Breakpoints.medium}px)`;
+
+  const imageSelectorButtonStyles = {
+    width: '1rem',
+    height: '1rem',
+    [phoneBreakpoint]: {
+      width: '1rem',
+      height: '1rem',
+      'min-width': '1rem',
+      'max-width': '1rem',
+    },
+  };
+
+  const prevNextButtonStyles = {
+    'font-weight': 'bold',
+    [phoneBreakpoint]: {
+      'font-size': '.5rem',
+      'max-width': '2rem',
+      width: '1.5rem',
+      height: '1.5rem',
+    },
+  };
+
   return (
     <Container>
       <Grid>
@@ -95,9 +119,7 @@ function Carousel({
               variant="outlined"
               color="primary"
               padding={2}
-              styles={{
-                'font-weight': 'bold',
-              }}
+              styles={prevNextButtonStyles}
               text="&#8592;"
               onClick={() => (
                 active > 0 ? setActive(active - 1) : setActive(imageComponents.length - 1)
@@ -115,16 +137,13 @@ function Carousel({
                 >
                   <Button
                     variant={index === active ? 'contained' : 'outlined'}
+                    styles={imageSelectorButtonStyles}
                     onClick={
                       index !== active
                         ? () => (setCurrent && setCurrent(index)) || setActive(index)
                         : () => null
                     }
                     padding={0}
-                    styles={{
-                      width: '1rem',
-                      height: '1rem',
-                    }}
                   />
                 </Column>
               ))
@@ -135,9 +154,7 @@ function Carousel({
               variant="outlined"
               color="secondary"
               padding={2}
-              styles={{
-                'font-weight': 'bold',
-              }}
+              styles={prevNextButtonStyles}
               text="&#8594;"
               onClick={() => (
                 active < imageComponents.length - 1 ? setActive(active + 1) : setActive(0)

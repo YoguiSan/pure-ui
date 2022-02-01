@@ -16,7 +16,12 @@ export default Styles.div`
     fontColor = (variant === 'contained' ? 'white' : 'black'),
     styles,
   }) => `
-    ${Object.keys(styles).map((property) => `${property}: ${styles[property]};`).join('\n')}
+    ${Object.keys(styles).map((property) => (
+    typeof (styles[property]) === 'object'
+      ? (`${property} {
+        ${Object.keys(styles[property]).map((subProperty) => `${subProperty}: ${styles[property][subProperty]};`).join('\n')}
+      }`)
+      : `${property}: ${styles[property]};`)).join('\n')}
 
     border: solid 2px ${fontColor};
     border-radius: .3rem;
