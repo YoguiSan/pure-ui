@@ -9,5 +9,6 @@
   "imageWidth": null,
   "padding": null,
   "unit": "px",
-  "children": null
+  "children": null,
+  "classes": []
 }

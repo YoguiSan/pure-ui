@@ -8,6 +8,7 @@ import Row from '../grid/row';
 import Container from './Container';
 
 import { CardDefaultProps } from './assets/json';
+import { arrayOf } from 'prop-types';
 
 function Card({
   image,
@@ -21,11 +22,13 @@ function Card({
   padding,
   unit = 'px',
   children = null,
+  classes,
 }) {
   return (
     <Container
       padding={padding}
       unit={unit}
+      className={classes.join(' ')}
     >
       {
         image
@@ -89,6 +92,7 @@ Card.propTypes = {
   subtitleAlign: string,
   text: string,
   children: element,
+  classes: arrayOf(string),
 };
 
 export default Card;

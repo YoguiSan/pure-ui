@@ -6,6 +6,7 @@ import {
 import Container from './Container';
 
 import { ButtonDefaultProps, variants } from './assets/json';
+import { arrayOf } from 'prop-types';
 
 function Button({
   variant = ButtonDefaultProps.variant,
@@ -17,6 +18,7 @@ function Button({
   fontColor = ButtonDefaultProps.fontColor,
   onClick = ButtonDefaultProps.onClick,
   styles = ButtonDefaultProps.styles,
+  classes,
 }) {
   return (
     <Container
@@ -25,6 +27,7 @@ function Button({
       color={color}
       fontColor={fontColor}
       styles={styles}
+      className={classes.join(' ')}
     >
       <button
         type={type}
@@ -49,6 +52,7 @@ Button.propTypes = {
   onClick: func.isRequired,
   padding: number,
   styles: objectOf(oneOfType([string, number])),
+  classes: arrayOf(string),
 };
 
 export default Button;

@@ -4,5 +4,6 @@
   "fontColor": null,
   "variant": "text",
   "icon": null,
-  "styles": {}
+  "styles": {},
+  "classes": []
 }
