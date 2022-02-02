@@ -14,10 +14,10 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [X] Card
 - [X] Progress bar
 - [X] Carousel
+- [X] Accordion
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
-- [ ] Accordion
 - [ ] Dropdown
 - [ ] Simple input
 - [ ] Number input

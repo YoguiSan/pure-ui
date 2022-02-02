@@ -44,7 +44,7 @@ function Card({
           ? (
             <Row>
               <Title
-                type="title"
+                type="h4"
                 text={title}
                 align={titleAlign}
               />
@@ -56,7 +56,7 @@ function Card({
           ? (
             <Row>
               <Title
-                type="subtitle"
+                type="h5"
                 text={subtitle}
                 align={subtitleAlign}
               />
