@@ -1,6 +1,10 @@
 import { element } from 'prop-types';
 import React from 'react';
+
 import Container from './Container';
+
+export { default as Row } from './row';
+export { default as Column } from './column';
 
 function Grid({
   children,

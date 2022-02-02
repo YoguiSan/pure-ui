@@ -6,6 +6,9 @@ import Column from '../grid/column';
 
 import SeuMadruga from './assets/img/madruga-large.jpg';
 import MadrugaCard from './assets/img/seumadrugaxz2.jpg';
+import Prerigo from './assets/img/prerigo.png';
+
+import { ImageDefaultProps } from './assets/json';
 
 export default {
   title: 'Image component',
@@ -36,9 +39,24 @@ export default {
         type: 'text',
       },
     },
+    height: {
+      control: {
+        type: 'number',
+      },
+    },
     width: {
       control: {
         type: 'number',
+      },
+    },
+    imageBackground: {
+      control: {
+        type: 'text',
+      },
+    },
+    styles: {
+      control: {
+        type: 'object',
       },
     },
   },
@@ -71,10 +89,11 @@ function Template(args) {
 export const image = Template.bind({});
 
 image.args = {
-  width: null,
+  ...ImageDefaultProps,
   alt: 'Seu Madruga, Madruguinha, or Don Ramón for non Brazilians',
   src: SeuMadruga,
   caption: 'Meet Mr. Madruga',
   captionBackground: 'black',
   captionColor: 'white',
+  backgroundImage: Prerigo,
 };

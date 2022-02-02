@@ -1,9 +1,15 @@
 {
   "menuBorderBottom": "#ccc",
+  "menuDropdownBackground": "white",
+  "menuDropdownColor": "black",
   "menuItemBackground": "white",
+  "menuItemWidth": null,
   "menuItemBorder": null,
   "menuItemColor": "black",
   "menuItemBackgroundHover": "#eee",
   "menuItemBorderHover": null,
-  "menuItemColorHover": "#222"
+  "menuItemColorHover": "#222",
+  "menuItemFontSize": 1,
+  "unit": "rem",
+  "background": "white"
 }

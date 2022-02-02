@@ -6,6 +6,7 @@ export default Styles.div`
 }
 
 display: flex;
+flex-wrap: wrap;
 margin: 0;
 padding: 1rem;
 width: 100%;

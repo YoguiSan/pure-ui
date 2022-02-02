@@ -55,7 +55,7 @@ function Template(args) {
 export const button = Template.bind({});
 
 button.args = {
-  variant: 'container',
+  variant: 'contained',
   type: 'button',
   color: 'primary',
   text: 'I can read what\'s in that button',

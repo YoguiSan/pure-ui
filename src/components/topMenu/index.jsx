@@ -1,9 +1,10 @@
+import React from 'react';
 import {
-  object, objectOf, string,
+  object, objectOf, string, number, oneOf,
 } from 'prop-types';
 
-import React from 'react';
 import { TopMenuDefaultProps } from './assets/json';
+import { Units } from '../assets/json';
 
 import Container from './Container';
 
@@ -13,7 +14,7 @@ const iterateMenuObject = (menuObject) => {
   Object.keys(menuObject).forEach((menuItem) => {
     if (typeof (menuObject[menuItem]) === 'object') {
       menu.push(
-        <li>
+        <li key={`${menuItem}-${Date.now()}`}>
           {menuItem}
           <ul>
             {iterateMenuObject(menuObject[menuItem])}
@@ -21,7 +22,7 @@ const iterateMenuObject = (menuObject) => {
         </li>,
       );
     } else {
-      menu.push(<li><a href={menuObject[menuItem]}>{menuItem}</a></li>);
+      menu.push(<li key={`${menuItem}-${Date.now()}`}><a href={menuObject[menuItem]}>{menuItem}</a></li>);
     }
   });
 
@@ -29,26 +30,38 @@ const iterateMenuObject = (menuObject) => {
 };
 
 function TopMenu({
-  menuItems,
+  menuItems = {},
+  menuItemFontSize = TopMenuDefaultProps.menuItemFontSize,
   menuBorderBottom = TopMenuDefaultProps.menuBorderBottom,
+  menuItemWidth,
   menuItemBackground = TopMenuDefaultProps.menuItemBackground,
+  menuItemBackgroundHover = TopMenuDefaultProps.menuItemBackgroundHover,
   menuItemBorder,
   menuItemColor = TopMenuDefaultProps.menuItemColor,
-  menuItemBackgroundHover = TopMenuDefaultProps.menuItemBackgroundHover,
+  menuDropdownBackground = TopMenuDefaultProps.menuDropdownBackground,
+  menuDropdownColor = TopMenuDefaultProps.menuDropdownColor,
   menuItemBorderHover,
   menuItemColorHover = TopMenuDefaultProps.menuItemColorHover,
+  unit = TopMenuDefaultProps.unit,
+  background = TopMenuDefaultProps.background,
 }) {
   const menu = iterateMenuObject(menuItems);
 
   return (
     <Container
+      menuItemFontSize={menuItemFontSize}
       menuBorderBottom={menuBorderBottom}
+      menuDropdownBackground={menuDropdownBackground}
+      menuDropdownColor={menuDropdownColor}
       menuItemBackground={menuItemBackground}
       menuItemBorder={menuItemBorder}
       menuItemColor={menuItemColor}
       menuItemBackgroundHover={menuItemBackgroundHover}
       menuItemBorderHover={menuItemBorderHover}
       menuItemColorHover={menuItemColorHover}
+      unit={unit}
+      menuItemWidth={menuItemWidth}
+      background={background}
     >
       <ul>{menu}</ul>
     </Container>
@@ -59,13 +72,19 @@ TopMenu.defaultProps = TopMenuDefaultProps;
 
 TopMenu.propTypes = {
   menuItems: (string || objectOf(string || object)).isRequired,
+  menuItemWidth: number,
   menuBorderBottom: string,
   menuItemBackground: string,
+  menuDropdownBackground: string,
+  menuDropdownColor: string,
   menuItemBorder: string,
   menuItemColor: string,
   menuItemBackgroundHover: string,
   menuItemBorderHover: string,
   menuItemColorHover: string,
+  menuItemFontSize: number,
+  unit: oneOf(Units),
+  background: string,
 };
 
 export default TopMenu;

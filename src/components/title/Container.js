@@ -10,7 +10,9 @@ const Container = styled(({
   children,
   ...props
 }) => createElement(tag, props, children))`
+display: flex;
 ${({ tag }) => styles && styles[tag] && styles[tag]}
+${({ lineHeight, unit = 'px' }) => `line-height: ${lineHeight}${unit};`}
 
 ${Fonts.default}
 

@@ -1,6 +1,6 @@
 import Styles from 'styled-components';
 
-import { breakpoints } from './assets/json';
+import { Breakpoints } from '../../assets/json';
 
 const containerColumns = 12;
 const widthPerColumn = 100 / containerColumns;
@@ -8,6 +8,10 @@ const widthPerColumn = 100 / containerColumns;
 export default Styles.div`
 display: flex;
 flex-wrap: wrap;
+
+> * {
+  margin: 0;
+}
 
 ${({ justifyContent = 'space-around' }) => `justify-content: ${justifyContent};`}
 
@@ -53,31 +57,31 @@ ${({
   `}
 `}
 
-@media (min-width: ${breakpoints.extraSmall}px) {
+@media (min-width: ${Breakpoints.extraSmall}px) {
   ${({ extraSmall = 12 }) => `
   ${extraSmall ? `width: ${widthPerColumn * extraSmall}%;` : ''};
   `}
 }
 
-@media (min-width: ${breakpoints.small}px) {
+@media (min-width: ${Breakpoints.small}px) {
   ${({ small }) => `
   ${small ? `width: ${widthPerColumn * small}%;` : ''};
   `}
 }
 
-@media (min-width: ${breakpoints.medium}px) {
+@media (min-width: ${Breakpoints.medium}px) {
   ${({ medium }) => `
   ${medium ? `width: ${widthPerColumn * medium}%;` : ''};
   `}
 }
 
-@media (min-width: ${breakpoints.large}px) {
+@media (min-width: ${Breakpoints.large}px) {
   ${({ large }) => `
   ${large ? `width: ${widthPerColumn * large}%;` : ''};
   `}
 }
 
-@media (min-width: ${breakpoints.extraLarge}px) {
+@media (min-width: ${Breakpoints.extraLarge}px) {
   ${({ extraLarge }) => `
   ${extraLarge ? `width: ${widthPerColumn * extraLarge}%;` : ''};
   `}

@@ -1,20 +1,35 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import {
+  number, string, shape, oneOf,
+} from 'prop-types';
+
 import Container from './Container';
 
+import { ImageDefaultProps } from './assets/json';
+
+import { Units } from '../assets/json';
+
 function Image({
+  height,
   width,
   alt,
   src,
   caption,
   captionBackground = 'black',
   captionColor = 'white',
+  backgroundImage,
+  styles,
+  unit = 'px',
 }) {
   return (
     <Container
+      height={height}
       width={width}
       captionBackground={captionBackground}
       captionColor={captionColor}
+      backgroundImage={backgroundImage}
+      styles={styles}
+      unit={unit}
     >
       <img alt={alt} src={src} />
       {caption && (
@@ -24,20 +39,19 @@ function Image({
   );
 }
 
-Image.defaultProps = {
-  width: null,
-  caption: null,
-  captionBackground: 'black',
-  captionColor: 'white',
-};
+Image.defaultProps = ImageDefaultProps;
 
 Image.propTypes = {
+  height: number,
   width: number,
   alt: string.isRequired,
   caption: string,
   src: string.isRequired,
   captionBackground: string,
   captionColor: string,
+  backgroundImage: string,
+  styles: shape(),
+  unit: oneOf(Units),
 };
 
 export default Image;

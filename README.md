@@ -6,15 +6,18 @@ A simple design system made with pure HTML tags and styled-components. This is s
 
 - [X] Grid (row and column too)
 - [x] Message
-- [x] Title
-- [X] Button
 - [X] Loader (modal and inline)
+- [X] Button
 - [X] Image
+- [x] Title
 - [X] Menu
-- [ ] Carousel
-- [ ] Card
+- [X] Card
+- [X] Progress bar
+- [X] Carousel
+- [X] Accordion
+- [ ] Divider
+- [ ] Footer
 - [ ] Error wrapper
-- [ ] Accordion
 - [ ] Dropdown
 - [ ] Simple input
 - [ ] Number input

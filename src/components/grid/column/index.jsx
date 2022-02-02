@@ -20,6 +20,7 @@ function Column({
   padding = 16,
   noBoxSizing,
   allowOverflow,
+  justifyContent,
 }) {
   return (
     <Container
@@ -37,6 +38,7 @@ function Column({
       narrow={narrow}
       noBoxSizing={noBoxSizing}
       allowOverflow={allowOverflow}
+      justifyContent={justifyContent}
     >
       {children}
     </Container>
