@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { string } from 'prop-types';
+import { element, string } from 'prop-types';
 
 import Container from './Container';
 import Title from '../title';
@@ -7,6 +7,7 @@ import Button from '../button';
 import Grid, { Row, Column } from '../grid';
 
 import { AccordionDefaultProps } from './assets/json';
+import { SpecialCharacters } from '../assets/json';
 
 function Accordion({
   title,
@@ -34,7 +35,7 @@ function Accordion({
             <Column condensed narrow extraSmall={1}>
               <Button
                 variant="text"
-                text="╲╱"
+                text={SpecialCharacters.caret}
                 className={`${open && 'open'}`}
                 onClick={() => setOpen(!open)}
               />
@@ -54,7 +55,7 @@ function Accordion({
 Accordion.defaultProps = AccordionDefaultProps;
 Accordion.propTypes = {
   title: string.isRequired,
-
+  children: element,
 };
 
 export default Accordion;

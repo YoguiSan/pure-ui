@@ -1,6 +1,7 @@
-# pure-ui
+# pure-ui-react
 
-A simple design system made with pure HTML tags and styled-components. This is still a work in progress, and far from complete.
+A simple design system for React made with pure HTML tags and styled-components. This is still a work in progress, and far from complete.
+**Note: this package isn't related to any others like @pureui/core or similars**
 
 ## To do
 
