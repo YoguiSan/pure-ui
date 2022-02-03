@@ -1,7 +1,7 @@
 {
-  "name": "pure-ui",
-  "version": "1.0.0",
-  "description": "A pure and minimalistic design system, using only pure HTML elements",
+  "name": "pure-ui-react",
+  "version": "1.0.1",
+  "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",

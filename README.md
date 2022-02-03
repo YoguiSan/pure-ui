@@ -1,6 +1,7 @@
-# pure-ui
+# pure-ui-react
 
-A simple design system made with pure HTML tags and styled-components. This is still a work in progress, and far from complete.
+A simple design system for React made with pure HTML tags and styled-components. This is still a work in progress, and far from complete.
+**Note: this package isn't related to any others like @pureui/core or similars**
 
 ## To do
 
@@ -15,7 +16,6 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [X] Progress bar
 - [X] Carousel
 - [X] Accordion
-- [X] Modal
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
@@ -37,6 +37,7 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [ ] Date picker
 - [ ] Radio button
 - [ ] Checkbox
+- [ ] Modal
 - [ ] Tag
 - [ ] Toggle
 - [ ] Tooltip
