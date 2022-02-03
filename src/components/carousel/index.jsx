@@ -15,6 +15,7 @@ function Carousel({
   images,
   current,
   setCurrent,
+  classes,
 }) {
   const [active, setActive] = useState(0);
   const [imageComponents, setImageComponents] = useState([]);
@@ -106,7 +107,9 @@ function Carousel({
   };
 
   return (
-    <Container>
+    <Container
+      className={classes.join(' ')}
+    >
       <Grid>
         <Row>
           <Column extraSmall={12}>
@@ -181,6 +184,7 @@ Carousel.propTypes = {
   ).isRequired,
   current: number,
   setCurrent: func,
+  classes: arrayOf(string),
 };
 
 export default Carousel;

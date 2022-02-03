@@ -107,6 +107,15 @@ function Template(args) {
           text={longText}
         />
       </Column>
+      <Column
+        condensed
+        extraSmall={12}
+      >
+        <Card
+          text="This one has custom classes"
+          classes={['class-one', 'class-two', 'very-originally-named-class-three']}
+        />
+      </Column>
     </Row>
   );
 }
@@ -124,4 +133,5 @@ card.args = {
   titleAlign: 'center',
   subtitleAlign: 'center',
   text: 'This is a card. Get it?',
+  onClick: () => alert('I can handle functions too'),
 };
