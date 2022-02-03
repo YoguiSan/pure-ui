@@ -15,6 +15,7 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [X] Progress bar
 - [X] Carousel
 - [X] Accordion
+- [X] Modal
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
@@ -36,7 +37,6 @@ A simple design system made with pure HTML tags and styled-components. This is s
 - [ ] Date picker
 - [ ] Radio button
 - [ ] Checkbox
-- [ ] Modal
 - [ ] Tag
 - [ ] Toggle
 - [ ] Tooltip
