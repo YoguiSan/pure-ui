@@ -16,6 +16,7 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [X] Progress bar
 - [X] Carousel
 - [X] Accordion
+- [ ] Component documentation
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
