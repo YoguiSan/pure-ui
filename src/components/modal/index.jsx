@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   bool, element, func, string,
+  arrayOf,
 } from 'prop-types';
 
 import Grid, { Row, Column } from '../grid';
@@ -17,6 +18,7 @@ function Modal({
   children = ModalDefaultProps.children,
   open = ModalDefaultProps.open,
   setOpen = ModalDefaultProps.setOpen,
+  classes = ModalDefaultProps.classes,
 }) {
   const close = () => {
     setOpen(false);
@@ -25,7 +27,9 @@ function Modal({
   if (!open) return '';
 
   return (
-    <Container>
+    <Container
+      classes={classes}
+    >
       <section
         className="pure-ui-modal"
       >
@@ -73,6 +77,7 @@ Modal.propTypes = {
   children: element.isRequired,
   open: bool,
   setOpen: func.isRequired,
+  classes: arrayOf(string),
 };
 
 export default Modal;
