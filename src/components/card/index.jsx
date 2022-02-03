@@ -38,6 +38,7 @@ function Card({
                 src={image}
                 alt={imageAlt}
                 width={imageWidth}
+                unit={unit}
               />
             </Row>
           ) : ''

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   object, objectOf, string, number, oneOf,
 } from 'prop-types';
+
+import Button from '../button';
 
 import { TopMenuDefaultProps } from './assets/json';
 import { Units } from '../assets/json';
@@ -45,6 +47,8 @@ function TopMenu({
   unit = TopMenuDefaultProps.unit,
   background = TopMenuDefaultProps.background,
 }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const menu = iterateMenuObject(menuItems);
 
   return (
@@ -62,7 +66,14 @@ function TopMenu({
       unit={unit}
       menuItemWidth={menuItemWidth}
       background={background}
+      open={mobileOpen}
     >
+      <Button
+        variant="outlined"
+        text="≡"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        classes={['pure-ui-menu-toggle-button']}
+      />
       <ul>{menu}</ul>
     </Container>
   );

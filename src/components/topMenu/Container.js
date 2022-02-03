@@ -1,11 +1,15 @@
 import Styles from 'styled-components';
 
-import { Fonts } from '../assets/json';
+import { Breakpoints, Fonts, Colors } from '../assets/json';
 
 const menuStyles = '';
 
 export default Styles.header`
 ${({ background = 'white' }) => `background: ${background};`}
+
+.pure-ui-menu-toggle-button {
+  display: none;
+}
 
 border-bottom: ${({ menuBorderBottom }) => `solid 1px ${menuBorderBottom}`};
 position: fixed;
@@ -106,6 +110,41 @@ ${({
         ${menuStyles}
       }
     }
+  }
+}
+
+@media (max-width: ${Breakpoints.medium - 1}px) {
+  border-bottom: none;
+  position: relative;
+
+  .pure-ui-menu-toggle-button {
+    display: block;
+    > button {
+      padding: 0;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  > ul {
+    ${({ open }) => (
+    open
+      ? `
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      position: fixed;
+      left: 0;
+      flex-direction: column;
+      width: fit-content;
+      height: fit-content;
+      box-shadow: -2px 2px 1rem ${Colors.gray};
+      `
+      : 'display: none;')};
+
+      > li > ul {
+        z-index: 999;
+      }
   }
 }
 `;
