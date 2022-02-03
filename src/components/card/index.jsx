@@ -1,5 +1,7 @@
 import React from 'react';
-import { number, string, element } from 'prop-types';
+import {
+  number, string, element, arrayOf, func,
+} from 'prop-types';
 
 import Image from '../figure';
 import Title from '../title';
@@ -8,27 +10,28 @@ import Row from '../grid/row';
 import Container from './Container';
 
 import { CardDefaultProps } from './assets/json';
-import { arrayOf } from 'prop-types';
 
 function Card({
-  image,
-  imageWidth,
-  imageAlt,
-  title,
-  subtitle,
-  titleAlign,
-  subtitleAlign,
-  text,
-  padding,
-  unit = 'px',
-  children = null,
-  classes,
+  image = CardDefaultProps.image,
+  imageWidth = CardDefaultProps.imageWidth,
+  imageAlt = CardDefaultProps.imageAlt,
+  title = CardDefaultProps.title,
+  subtitle = CardDefaultProps.subtitle,
+  titleAlign = CardDefaultProps.titleAlign,
+  subtitleAlign = CardDefaultProps.subtitleAlign,
+  text = CardDefaultProps.text,
+  padding = CardDefaultProps.padding,
+  unit = CardDefaultProps.unit,
+  children = CardDefaultProps.children,
+  classes = CardDefaultProps.classes,
+  onClick = CardDefaultProps.onClick,
 }) {
   return (
     <Container
       padding={padding}
       unit={unit}
       className={classes.join(' ')}
+      onClick={onClick}
     >
       {
         image
@@ -94,6 +97,7 @@ Card.propTypes = {
   text: string,
   children: element,
   classes: arrayOf(string),
+  onClick: func,
 };
 
 export default Card;

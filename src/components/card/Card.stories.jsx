@@ -133,4 +133,5 @@ card.args = {
   titleAlign: 'center',
   subtitleAlign: 'center',
   text: 'This is a card. Get it?',
+  onClick: () => alert('I can handle functions too'),
 };

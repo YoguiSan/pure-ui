@@ -10,5 +10,6 @@
   "padding": null,
   "unit": "px",
   "children": null,
-  "classes": []
+  "classes": [],
+  "onClick": null
 }
