@@ -16,7 +16,8 @@
     "merge:master": "npm run merge:main",
     "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
     "prepare:husky": "husky install",
-    "publish": "git checkout main && npm publish & git checkout develop"
+    "publish": "git checkout main && git pull && npm publish & git checkout develop",
+    "push:publish": "npm run push && npm run merge:master && npm run publish"
   },
   "keywords": [
     "ui",
