@@ -80,5 +80,6 @@ input.args = {
   ...InputDefaultProps,
   label: 'Label',
   name: 'input name',
+  value: undefined,
   onChange: (event) => console.log(`I can handle this event. The current value is: ${event.target.value}`),
 };
