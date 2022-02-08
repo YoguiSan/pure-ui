@@ -40,8 +40,15 @@ label {
 
 input {
   padding: .5rem;
+
   &, &:focus {
     border: none;
   }
+}
+
+p.pure-ui-input-error-message {
+  color: ${Colors.error};
+  margin-top: 0.5rem;
+  font-size: .8rem;
 }
 `;

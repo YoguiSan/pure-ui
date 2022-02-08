@@ -35,6 +35,9 @@ function Form({
   const {
     register,
     handleSubmit,
+    formState: {
+      errors,
+    },
   } = useForm();
 
   const inputList = [];
@@ -48,6 +51,7 @@ function Form({
     onChange,
     classes,
     required,
+    errorMessage,
   }) => inputList.push(
     <Column
       extraSmall={inputExtraSmall}
@@ -65,6 +69,8 @@ function Form({
         value={value}
         onChange={onChange}
         classes={classes}
+        error={errors[name]}
+        errorMessage={errorMessage}
         register={register(name, {
           required,
         })}

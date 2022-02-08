@@ -3,5 +3,6 @@
   "label": "",
   "onChange": null,
   "variant": "regular",
-  "classes": []
+  "classes": [],
+  "errorMessage": "This field is required"
 }

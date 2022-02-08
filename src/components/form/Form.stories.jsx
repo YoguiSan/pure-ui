@@ -5,6 +5,8 @@ import Image from '../figure';
 
 import { childrenPositions, FormDefaultProps } from './assets/json';
 
+import { variants } from '../button/assets/json';
+
 import ThatsAllFolks from './assets/img/folks.jpg';
 
 export default {
@@ -20,6 +22,18 @@ export default {
       control: {
         type: 'radio',
         options: childrenPositions,
+      },
+    },
+    submitButtonVariant: {
+      control: {
+        type: 'radio',
+        options: variants,
+      },
+    },
+    cancelButtonVariant: {
+      control: {
+        type: 'radio',
+        options: variants,
       },
     },
   },
@@ -51,26 +65,34 @@ form.args = {
       name: 'date',
       variant: 'underlined',
       onChange: (event) => console.log('Date changed', event.target.value),
+      required: true,
+      errorMessage: 'You must provide a date',
     }, {
       type: 'text',
       label: 'Name',
       name: 'name',
       onChange: (event) => console.log('Name changed', event.target.value),
+      required: true,
+      errorMessage: 'Name is required',
     }, {
       type: 'number',
       label: 'Number',
       name: 'number',
       onChange: (event) => console.log('Number changed', event.target.value),
+      errorMessage: 'We need a number for that',
     }, {
       type: 'email',
       label: 'Email',
       name: 'email',
       onChange: (event) => console.log('Email changed', event.target.value),
+      required: true,
+      errorMessage: 'How can we get in touch without an email?',
     }, {
       type: 'file',
-      label: 'File',
+      label: 'File (not required)',
       name: 'file',
       onChange: (event) => console.log('File changed', event.target.value),
+      required: false,
     },
   ],
   childrenPosition: 'end',

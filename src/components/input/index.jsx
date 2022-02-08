@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  arrayOf, func, oneOf, string,
+  arrayOf, bool, func, oneOf, string,
 } from 'prop-types';
 
 import { InputDefaultProps, types, variants } from './assets/json';
@@ -15,6 +15,8 @@ function Input({
   name = InputDefaultProps.name,
   variant = InputDefaultProps.variant,
   classes = InputDefaultProps.classes,
+  error,
+  errorMessage,
   register,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
@@ -54,6 +56,16 @@ function Input({
         onChange={onChange}
         {...register}
       />
+      {
+        error
+        && (
+          <p
+            className="pure-ui-input-error-message"
+          >
+            {errorMessage}
+          </p>
+        )
+      }
     </Container>
   );
 }
@@ -68,6 +80,8 @@ Input.propTypes = {
   onChange: func,
   variant: oneOf(variants),
   classes: arrayOf(string),
+  error: bool,
+  errorMessage: string,
   register: func,
 };
 
