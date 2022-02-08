@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { useForm } from 'react-hook-form';
 import {
   arrayOf, element, func, number, oneOf, shape, string,
 } from 'prop-types';
 
 import Input from '../input';
+import Button from '../button';
 import Grid, { Row, Column } from '../grid';
 
 import Container from './Container';
@@ -15,13 +16,27 @@ function Form({
   inputs = FormDefaultProps.inputs,
   children = FormDefaultProps.children,
   onSubmit = FormDefaultProps.onSubmit,
+  onCancel = FormDefaultProps.onCancel,
   inputExtraSmall = FormDefaultProps.inputExtraSmall,
   inputSmall = FormDefaultProps.inputSmall,
   inputMedium = FormDefaultProps.inputMedium,
   inputLarge = FormDefaultProps.inputLarge,
   inputExtraLarge = FormDefaultProps.inputExtraLarge,
   childrenPosition = FormDefaultProps.childrenPosition,
+  submitButtonText = FormDefaultProps.submitButtonText,
+  cancelButtonText = FormDefaultProps.cancelButtonText,
+  submitButtonVariant = FormDefaultProps.submitButtonVariant,
+  cancelButtonVariant = FormDefaultProps.cancelButtonVariant,
+  submitButtonColor = FormDefaultProps.submitButtonColor,
+  cancelButtonColor = FormDefaultProps.cancelButtonColor,
+  submitButtonFontColor = FormDefaultProps.submitButtonFontColor,
+  cancelButtonFontColor = FormDefaultProps.cancelButtonFontColor,
 }) {
+  const {
+    register,
+    handleSubmit,
+  } = useForm();
+
   const inputList = [];
 
   inputs.forEach(({
@@ -32,6 +47,7 @@ function Form({
     value,
     onChange,
     classes,
+    required,
   }) => inputList.push(
     <Column
       extraSmall={inputExtraSmall}
@@ -49,13 +65,16 @@ function Form({
         value={value}
         onChange={onChange}
         classes={classes}
+        register={register(name, {
+          required,
+        })}
       />
     </Column>,
   ));
 
   return (
     <Container
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <Grid>
         {childrenPosition === 'start' && (
@@ -71,6 +90,45 @@ function Form({
             {children}
           </Row>
         )}
+        <Row>
+          {
+            onCancel
+              ? (
+                <Column
+                  extraSmall={inputExtraSmall}
+                  small={inputSmall}
+                  medium={inputMedium}
+                  large={inputLarge}
+                  extraLarge={inputExtraLarge}
+                >
+                  <Button
+                    variant={cancelButtonVariant}
+                    color={cancelButtonColor}
+                    fontColor={cancelButtonFontColor}
+                    text={cancelButtonText}
+                    onClick={(event) => onCancel(event)}
+                  />
+                </Column>
+              )
+              : ''
+          }
+          <Column
+            extraSmall={inputExtraSmall}
+            small={inputSmall}
+            medium={inputMedium}
+            large={inputLarge}
+            extraLarge={inputExtraLarge}
+          >
+            <Button
+              // type="submit"
+              variant={submitButtonVariant}
+              color={submitButtonColor}
+              fontColor={submitButtonFontColor}
+              text={submitButtonText}
+              onClick={handleSubmit(onSubmit)}
+            />
+          </Column>
+        </Row>
       </Grid>
     </Container>
   );
@@ -95,7 +153,16 @@ Form.propTypes = {
   inputLarge: number,
   inputExtraLarge: number,
   onSubmit: func,
+  onCancel: func,
   childrenPosition: oneOf(childrenPositions),
+  submitButtonText: string,
+  cancelButtonText: string,
+  submitButtonVariant: string,
+  cancelButtonVariant: string,
+  submitButtonColor: string,
+  cancelButtonColor: string,
+  submitButtonFontColor: string,
+  cancelButtonFontColor: string,
 };
 
 export default Form;

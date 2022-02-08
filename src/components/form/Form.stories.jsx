@@ -29,6 +29,8 @@ function Template(args) {
   return (
     <Form
       {...args}
+      onSubmit={(data) => console.log('this is the data that would be sent: ', data)}
+      onCancel={() => console.log('Submit has been cancelled')}
     >
       <Image
         src={ThatsAllFolks}

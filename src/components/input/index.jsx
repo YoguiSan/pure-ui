@@ -15,6 +15,7 @@ function Input({
   name = InputDefaultProps.name,
   variant = InputDefaultProps.variant,
   classes = InputDefaultProps.classes,
+  register,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
 
@@ -51,6 +52,7 @@ function Input({
         label={label}
         value={value}
         onChange={onChange}
+        {...register}
       />
     </Container>
   );
@@ -66,6 +68,7 @@ Input.propTypes = {
   onChange: func,
   variant: oneOf(variants),
   classes: arrayOf(string),
+  register: func,
 };
 
 export default Input;

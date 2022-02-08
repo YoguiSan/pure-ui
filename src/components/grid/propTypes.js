@@ -1,4 +1,5 @@
 import {
+  arrayOf,
   bool,
   element,
   number,
@@ -8,7 +9,7 @@ import {
 import { JustifyContentOptions } from './assets/json';
 
 export const GridPropTypes = {
-  children: element.isRequired,
+  children: arrayOf(element).isRequired,
   condensed: bool,
   narrow: bool,
   noBoxSizing: bool,

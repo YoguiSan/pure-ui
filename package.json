@@ -44,6 +44,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "formatadores": "^1.5.2",
     "jest": "^27.4.7",
+    "react-hook-form": "^7.26.1",
     "react-use-error-boundary": "^0.0.6",
     "storybook-addon-jsx": "^7.3.14",
     "styled-components": "^5.3.3",
