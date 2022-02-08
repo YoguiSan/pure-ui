@@ -46,12 +46,29 @@ function Template(args) {
       <Row>
         <Column
           condensed
-          extraSmall={5}
+          extraSmall={3}
         >
           <Input
             {...args}
           />
         </Column>
+        <Column
+          condensed
+          extraSmall={3}
+        >
+          <Input
+            label="Underlined input"
+            variant="underlined"
+          />
+        </Column>
+        <Column
+          condensed
+          extraSmall={3}
+        />
+        <Column
+          condensed
+          extraSmall={3}
+        />
       </Row>
     </Grid>
   );
@@ -61,6 +78,7 @@ export const input = Template.bind({});
 
 input.args = {
   ...InputDefaultProps,
-  name: 'sample-input',
+  label: 'Label',
+  name: 'input name',
   onChange: (event) => console.log(`I can handle this event. The current value is: ${event.target.value}`),
 };

@@ -1,8 +1,6 @@
 {
   "type": "text",
   "label": "",
-  "value": null,
-  "name": null,
   "onChange": null,
   "variant": "regular",
   "classes": []

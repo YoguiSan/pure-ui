@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   arrayOf, func, oneOf, string,
 } from 'prop-types';
@@ -12,10 +12,24 @@ function Input({
   label = InputDefaultProps.label,
   value = InputDefaultProps.value,
   onChange = InputDefaultProps.onChange,
-  name = `pure-ui-input-${Date.now()}`,
+  name = InputDefaultProps.name,
   variant = InputDefaultProps.variant,
   classes = InputDefaultProps.classes,
 }) {
+  const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
+
+  useEffect(() => {
+    setComponentName(name);
+  }, [name]);
+
+  useEffect(() => {
+    const conflictingElements = document.getElementsByName(componentName);
+
+    if (!componentName || componentName.length < 1 || conflictingElements.length > 1) {
+      setComponentName(`pure-ui-input-${Date.now() / ((301574 * Math.random()) * Math.random())}`);
+    }
+  }, [componentName]);
+
   return (
     <Container
       className={`pure-ui-input-${variant} ${classes.join(' ')}`}
@@ -24,15 +38,15 @@ function Input({
         label
           && (
             <label
-              htmlFor={name}
+              htmlFor={componentName}
             >
               {label}
             </label>
           )
       }
       <input
-        name={name}
-        id={name}
+        name={componentName}
+        id={componentName}
         type={type}
         label={label}
         value={value}

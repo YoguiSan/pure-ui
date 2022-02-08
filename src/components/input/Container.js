@@ -2,7 +2,7 @@ import Styles from 'styled-components';
 
 import { Colors, Fonts } from '../assets/json';
 
-const classPrefix = '.pure-ui-input-';
+const classPrefix = 'pure-ui-input';
 
 export default Styles.div`
 ${Fonts.default}
@@ -16,7 +16,7 @@ label {
   padding-left: .5rem;
 }
 
-&${classPrefix}regular input {
+&.${classPrefix}-regular input {
   &,
   &:active,
   &:focus,
@@ -27,7 +27,7 @@ label {
   }
 }
 
-&${classPrefix}underlined input {
+&.${classPrefix}-underlined input {
   &,
   &:active,
   &:focus,
