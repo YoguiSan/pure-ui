@@ -71,6 +71,7 @@ function Form({
         classes={classes}
         error={errors[name]}
         errorMessage={errorMessage}
+        fullWidth
         register={register(name, {
           required,
         })}
