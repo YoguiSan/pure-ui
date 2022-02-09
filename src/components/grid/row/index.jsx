@@ -4,18 +4,19 @@ import Container from './Container';
 import { GridDefaultProps, GridPropTypes } from '../propTypes';
 
 function Row({
-  children,
-  condensed,
-  narrow,
-  noBoxSizing,
-  overflow,
-  padding = 16,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  paddingTop,
-  allowOverflow,
-  justifyContent,
+  children = GridDefaultProps.children,
+  condensed = GridDefaultProps.condensed,
+  narrow = GridDefaultProps.narrow,
+  noBoxSizing = GridDefaultProps.noBoxSizinh,
+  overflow = GridDefaultProps.overflow,
+  padding = GridDefaultProps.padding,
+  paddingBottom = GridDefaultProps.paddingBottom,
+  paddingLeft = GridDefaultProps.paddingLeft,
+  paddingRight = GridDefaultProps.paddingRight,
+  paddingTop = GridDefaultProps.paddingTop,
+  allowOverflow = GridDefaultProps.allowOverflow,
+  justifyContent = GridDefaultProps.justifyContent,
+  flexDirection = GridDefaultProps.flexDirection,
 }) {
   return (
     <Container
@@ -30,6 +31,7 @@ function Row({
       paddingTop={paddingTop}
       allowOverflow={allowOverflow}
       justifyContent={justifyContent}
+      flexDirection={flexDirection}
     >
       {children}
     </Container>

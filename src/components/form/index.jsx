@@ -11,6 +11,7 @@ import Grid, { Row, Column } from '../grid';
 import Container from './Container';
 
 import { childrenPositions, FormDefaultProps } from './assets/json';
+import { FlexDirectionOptions } from '../grid/assets/json';
 
 function Form({
   inputs = FormDefaultProps.inputs,
@@ -31,6 +32,7 @@ function Form({
   cancelButtonColor = FormDefaultProps.cancelButtonColor,
   submitButtonFontColor = FormDefaultProps.submitButtonFontColor,
   cancelButtonFontColor = FormDefaultProps.cancelButtonFontColor,
+  direction = FormDefaultProps.direction,
 }) {
   const {
     register,
@@ -85,11 +87,15 @@ function Form({
     >
       <Grid>
         {childrenPosition === 'start' && (
-          <Row>
+          <Row
+            flexDirection={direction}
+          >
             {children}
           </Row>
         )}
-        <Row>
+        <Row
+          flexDirection={direction}
+        >
           {inputList}
         </Row>
         {childrenPosition === 'end' && (
@@ -170,6 +176,7 @@ Form.propTypes = {
   cancelButtonColor: string,
   submitButtonFontColor: string,
   cancelButtonFontColor: string,
+  direction: oneOf(FlexDirectionOptions),
 };
 
 export default Form;

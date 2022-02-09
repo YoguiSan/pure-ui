@@ -6,7 +6,8 @@ import {
   oneOf,
   string,
 } from 'prop-types';
-import { JustifyContentOptions } from './assets/json';
+
+import { FlexDirectionOptions, JustifyContentOptions } from './assets/json';
 
 export const GridPropTypes = {
   children: arrayOf(element).isRequired,
@@ -21,6 +22,7 @@ export const GridPropTypes = {
   paddingTop: number,
   allowOverflow: bool,
   justifyContent: oneOf(JustifyContentOptions),
+  flexDirection: oneOf(FlexDirectionOptions),
 };
 
 export const GridDefaultProps = {
@@ -35,4 +37,5 @@ export const GridDefaultProps = {
   paddingTop: 16,
   allowOverflow: false,
   justifyContent: 'space-around',
+  flexDirection: 'row',
 };
