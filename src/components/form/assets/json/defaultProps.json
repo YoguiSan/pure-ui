@@ -13,5 +13,6 @@
   "submitButtonColor": "primary",
   "cancelButtonColor": "error",
   "submitButtonFontColor": "white",
-  "cancelButtonFontColor": "white"
+  "cancelButtonFontColor": "white",
+  "direction": "row"
 }

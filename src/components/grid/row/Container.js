@@ -3,6 +3,7 @@ import Styles from 'styled-components';
 export default Styles.div`
 display: flex;
 flex-wrap: wrap;
+${({ flexDirection = 'row' }) => `flex-direction: ${flexDirection}`};
 width: 100%;
 
 &, > * {

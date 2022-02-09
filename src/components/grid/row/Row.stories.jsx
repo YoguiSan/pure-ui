@@ -4,12 +4,21 @@ import Row from '.';
 import Title from '../../title';
 import Column from '../column';
 
+import { FlexDirectionOptions } from '../assets/json';
 import { GridParameters, GridExampleParameters } from '../storyParameters';
 
 export default {
   title: 'Row component',
   component: Row,
-  argTypes: { ...GridParameters },
+  argTypes: {
+    ...GridParameters,
+    flexDirection: {
+      control: {
+        type: 'radio',
+        options: FlexDirectionOptions,
+      },
+    },
+  },
 };
 
 function Template(args) {

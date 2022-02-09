@@ -8,6 +8,7 @@ import { childrenPositions, FormDefaultProps } from './assets/json';
 import { variants } from '../button/assets/json';
 
 import ThatsAllFolks from './assets/img/folks.jpg';
+import { FlexDirectionOptions } from '../grid/assets/json';
 
 export default {
   title: 'Form component',
@@ -34,6 +35,12 @@ export default {
       control: {
         type: 'radio',
         options: variants,
+      },
+    },
+    direction: {
+      control: {
+        type: 'radio',
+        options: FlexDirectionOptions,
       },
     },
   },
@@ -96,4 +103,5 @@ form.args = {
     },
   ],
   childrenPosition: 'end',
+  direction: 'row',
 };
