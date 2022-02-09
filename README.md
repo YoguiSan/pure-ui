@@ -17,19 +17,19 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [X] Progress bar
 - [X] Carousel
 - [X] Accordion
+- [X] Form
+- [X] Simple input
+- [X] Number input
+- [X] Phone input
+- [X] Email input
+- [X] File uploader
+- [ ] TextArea
 - [ ] Component documentation
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
 - [ ] Dropdown
-- [ ] Simple input
-- [ ] Number input
-- [ ] Phone input
-- [ ] Email input
-- [ ] TextArea
 - [ ] Table
-- [ ] File uploader
-- [ ] Form
 - [ ] Link
 - [ ] Pagination
 - [ ] Progress indicator
