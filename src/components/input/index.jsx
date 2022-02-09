@@ -18,6 +18,7 @@ function Input({
   error,
   errorMessage,
   register,
+  fullWidth,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
 
@@ -36,6 +37,7 @@ function Input({
   return (
     <Container
       className={`pure-ui-input-${variant} ${classes.join(' ')}`}
+      fullWidth={fullWidth}
     >
       {
         label
@@ -83,6 +85,7 @@ Input.propTypes = {
   error: bool,
   errorMessage: string,
   register: func,
+  fullWidth: bool,
 };
 
 export default Input;

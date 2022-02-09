@@ -6,7 +6,11 @@ const classPrefix = 'pure-ui-input';
 
 export default Styles.div`
 ${Fonts.default}
-
+${({ fullWidth }) => (fullWidth ? `&, & label, & input {
+  width: 100%;
+}
+` : ''
+)}
 display: flex;
 flex-direction: column;
 position: relative;
