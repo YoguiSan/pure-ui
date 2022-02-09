@@ -1,0 +1,17 @@
+{
+  "inputs": [],
+  "children": [],
+  "inputExtraSmall": 12,
+  "inputSmall": 12,
+  "inputMedium": 6,
+  "inputLarge": 4,
+  "inputExtraLarge": 3,
+  "submitButtonText": "Submit",
+  "cancelButtonText": "Cancel",
+  "submitButtonVariant": "contained",
+  "cancelButtonVariant": "contained",
+  "submitButtonColor": "primary",
+  "cancelButtonColor": "error",
+  "submitButtonFontColor": "white",
+  "cancelButtonFontColor": "white"
+}

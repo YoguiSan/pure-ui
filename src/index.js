@@ -15,3 +15,5 @@ export { default as Card } from './components/card';
 export { default as Carousel } from './components/carousel';
 export { default as Accordion } from './components/accordion';
 export { default as Modal } from './components/modal';
+export { default as Input } from './components/input';
+export { default as Form } from './components/form';

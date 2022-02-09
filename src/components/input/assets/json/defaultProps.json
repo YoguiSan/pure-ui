@@ -1,0 +1,8 @@
+{
+  "type": "text",
+  "label": "",
+  "onChange": null,
+  "variant": "regular",
+  "classes": [],
+  "errorMessage": "This field is required"
+}

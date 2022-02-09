@@ -1,6 +1,6 @@
 {
   "name": "pure-ui-react",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
   "scripts": {
@@ -35,13 +35,16 @@
   "dependencies": {
     "'": "file:storybook/addon-knobs/register'",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@storybook/addon-controls": "^6.4.10",
+    "@storybook/addon-controls": "^6.4.18",
     "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/react": "^6.4.10",
+    "@storybook/builder-webpack5": "^6.4.18",
+    "@storybook/manager-webpack5": "^6.4.18",
+    "@storybook/react": "^6.4.18",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "formatadores": "^1.5.2",
     "jest": "^27.4.7",
+    "react-hook-form": "^7.26.1",
     "react-use-error-boundary": "^0.0.6",
     "storybook-addon-jsx": "^7.3.14",
     "styled-components": "^5.3.3",
@@ -70,6 +73,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.6",
     "husky": "^7.0.4",
     "jest-sonar-reporter": "^2.0.0",
     "url-loader": "^4.1.1"
