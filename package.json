@@ -18,7 +18,8 @@
     "prepare:husky": "husky install",
     "publish": "git checkout main && git pull && npm publish & git checkout develop",
     "push:publish": "npm run push && npm run merge:master && npm run publish",
-    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish"
+    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish",
+    "postinstall": "npm run build"
   },
   "keywords": [
     "ui",
