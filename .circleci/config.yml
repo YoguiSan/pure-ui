@@ -20,8 +20,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: "sudo npm i -g npm@latest"
+          name: reinstall-npm
+          command: "sudo pacman -Rsc -n nodejs && sudo pacman -Sy nodejs && sudo pacman -Sy npm"
       - run:
           name: install
           command: "npm ci"
