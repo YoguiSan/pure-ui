@@ -19,8 +19,7 @@
     "publish": "git checkout main && git pull && npm publish & git checkout develop",
     "push:publish": "npm run push && npm run merge:master && npm run publish",
     "patch:push": "npm version patch --no-git-tag-version && npm run push && npm run merge:master",
-    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish",
-    "postinstall": "npm i && npm run build"
+    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish"
   },
   "keywords": [
     "ui",
