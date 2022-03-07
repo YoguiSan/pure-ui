@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  arrayOf, bool, func, oneOf, string,
+  arrayOf, bool, func, oneOf, string, number,
 } from 'prop-types';
 
 import { InputDefaultProps, types, variants } from './assets/json';
@@ -19,6 +19,7 @@ function Input({
   errorMessage,
   register,
   fullWidth,
+  rows = InputDefaultProps.rows,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
 
@@ -33,6 +34,34 @@ function Input({
       setComponentName(`pure-ui-input-${Date.now() / ((301574 * Math.random()) * Math.random())}`);
     }
   }, [componentName]);
+
+  let selectedInput;
+
+  if (type === 'textarea') {
+    selectedInput = (
+      <textarea
+        name={componentName}
+        id={componentName}
+        label={label}
+        value={value}
+        onChange={onChange}
+        {...register}
+        rows={rows}
+      />
+    );
+  } else {
+    selectedInput = (
+      <input
+        name={componentName}
+        id={componentName}
+        type={type}
+        label={label}
+        value={value}
+        onChange={onChange}
+        {...register}
+      />
+    );
+  }
 
   return (
     <Container
@@ -49,15 +78,7 @@ function Input({
             </label>
           )
       }
-      <input
-        name={componentName}
-        id={componentName}
-        type={type}
-        label={label}
-        value={value}
-        onChange={onChange}
-        {...register}
-      />
+      {selectedInput}
       {
         error
         && (
@@ -86,6 +107,7 @@ Input.propTypes = {
   errorMessage: string,
   register: func,
   fullWidth: bool,
+  rows: number,
 };
 
 export default Input;

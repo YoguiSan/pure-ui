@@ -4,5 +4,6 @@
   "onChange": null,
   "variant": "regular",
   "classes": [],
-  "errorMessage": "This field is required"
+  "errorMessage": "This field is required",
+  "rows": 5
 }
