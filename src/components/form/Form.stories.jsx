@@ -100,6 +100,13 @@ form.args = {
       name: 'file',
       onChange: (event) => console.log('File changed', event.target.value),
       required: false,
+    }, {
+      type: 'textarea',
+      label: 'Textarea',
+      name: 'textarea',
+      onChange: (event) => console.log('Textarea', event.target.value),
+      required: false,
+      rows: 5,
     },
   ],
   childrenPosition: 'end',

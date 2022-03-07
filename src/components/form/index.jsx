@@ -133,7 +133,6 @@ function Form({
             extraLarge={inputExtraLarge}
           >
             <Button
-              // type="submit"
               variant={submitButtonVariant}
               color={submitButtonColor}
               fontColor={submitButtonFontColor}
