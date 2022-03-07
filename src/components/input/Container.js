@@ -19,7 +19,8 @@ label {
   padding-left: .5rem;
 }
 
-&.${classPrefix}-regular input {
+&.${classPrefix}-regular input ,
+&.${classPrefix}-regular textarea {
   &,
   &:active,
   &:focus,
@@ -30,7 +31,8 @@ label {
   }
 }
 
-&.${classPrefix}-underlined input {
+&.${classPrefix}-underlined input,
+&.${classPrefix}-underlined textarea {
   &,
   &:active,
   &:focus,
