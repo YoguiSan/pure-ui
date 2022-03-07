@@ -44,8 +44,8 @@ function Input({
         id={componentName}
         label={label}
         value={value}
-        onChange={onChange}
         {...register}
+        onChange={onChange}
         rows={rows}
       />
     );
@@ -57,8 +57,8 @@ function Input({
         type={type}
         label={label}
         value={value}
-        onChange={onChange}
         {...register}
+        onChange={onChange}
       />
     );
   }
