@@ -16,7 +16,7 @@ position: fixed;
 height: fit-content;
 width: 97%;
 top: 0;
-z-index: 1000;
+z-index: 998;
 
 margin: 0 auto;
 
@@ -143,7 +143,7 @@ ${({
       : 'display: none;')};
 
       > li > ul {
-        z-index: 999;
+        z-index: 997;
       }
   }
 }

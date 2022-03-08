@@ -29,6 +29,7 @@ top: 0;
 left: 0;
 right: 0;
 opacity: .8;
+z-index: 1000;
 ${({ modalBackground }) => (
     (modalBackground !== false
     && modalBackground
