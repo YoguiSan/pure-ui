@@ -1,6 +1,11 @@
 import Styles from 'styled-components';
 
-import { Breakpoints, Fonts, Colors } from '../assets/json';
+import {
+  Breakpoints,
+  Fonts,
+  Colors,
+  Styles as CSSStyles,
+} from '../assets/json';
 
 const menuStyles = '';
 
@@ -14,7 +19,9 @@ ${({ background = 'white' }) => `background: ${background};`}
 border-bottom: ${({ menuBorderBottom }) => `solid 1px ${menuBorderBottom}`};
 position: fixed;
 height: fit-content;
-width: 97%;
+width: 100%;
+left: 0;
+right: 0;
 top: 0;
 z-index: 998;
 
@@ -48,7 +55,7 @@ ${({
 
   ul {
     position: absolute;
-    box-shadow: -2px 2px 1rem #ccc;
+    ${CSSStyles.boxShadow('#ccc')}
 
     top: 100%;
 
@@ -138,7 +145,7 @@ ${({
       flex-direction: column;
       width: fit-content;
       height: fit-content;
-      box-shadow: -2px 2px 1rem ${Colors.gray};
+      ${CSSStyles.boxShadow('#ccc')}
       `
       : 'display: none;')};
 
