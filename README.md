@@ -23,13 +23,13 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [X] Phone input
 - [X] Email input
 - [X] File uploader
-- [ ] TextArea
+- [X] TextArea
+- [X] Table
 - [ ] Component documentation
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
 - [ ] Dropdown
-- [ ] Table
 - [ ] Link
 - [ ] Pagination
 - [ ] Progress indicator

@@ -1,8 +1,11 @@
 import Styles from 'styled-components';
-import { Colors } from '../assets/json';
+import {
+  Colors,
+  Styles as CSSStyles,
+} from '../assets/json';
 
 export default Styles.div`
-  box-shadow: -2px 2px 1rem ${Colors.gray};
+  ${CSSStyles.boxShadow()}
   height: fit-content;
 
   ${({
