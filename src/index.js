@@ -17,3 +17,4 @@ export { default as Accordion } from './components/accordion';
 export { default as Modal } from './components/modal';
 export { default as Input } from './components/input';
 export { default as Form } from './components/form';
+export { default as Table } from './components/table';
