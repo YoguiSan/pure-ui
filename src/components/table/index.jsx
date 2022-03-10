@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   element, oneOf, string, number,
-  oneOfType, shape, arrayOf,
+  oneOfType, shape, arrayOf, bool,
 } from 'prop-types';
+
+import Title from '../title';
 
 import Container from './Container';
 
@@ -82,6 +84,14 @@ function Table({
       background={background}
       fontColor={fontColor}
     >
+      {title
+        ? (
+          <Title
+            type="h2"
+            text={title}
+          />
+        )
+        : ''}
       <table
         id={tableId}
         cellSpacing={0}
@@ -102,11 +112,15 @@ function Table({
 Table.defaultProps = TableDefaultProps;
 
 Table.propTypes = {
-  header: shape({
-    id: string.isRequired,
-    text: string.isRequired,
-  }).isRequired,
+  id: string,
+  header: shape({}).isRequired,
   rows: arrayOf(shape({}).isRequired),
+  headerBackground: string,
+  headerColor: string,
+  striped: bool,
+  stripeColor: string,
+  background: string,
+  fontColor: string,
 };
 
 export default Table;
