@@ -6,6 +6,7 @@ import {
 } from '../assets/json';
 
 export default Styles.div`
+width: 100%;
 ${({ background = 'none' }) => `background: ${background};`}
 ${CSSStyles.boxShadow()}
 
