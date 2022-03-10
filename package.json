@@ -15,6 +15,7 @@
     "lint:fix": "eslint ./**.js --fix",
     "merge:master": "npm run merge:main",
     "merge:main": "git checkout main && git pull && git merge develop && git push && git checkout develop",
+    "push:merge": "npm run push && npm run merge:main",
     "prepare:husky": "husky install",
     "publish:main": "git checkout main && git pull && npm run build && npm publish & git checkout develop",
     "push:publish": "npm run push && npm run merge:master && npm run publish:main",
