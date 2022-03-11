@@ -23,7 +23,7 @@ width: 100%;
 left: 0;
 right: 0;
 top: 0;
-z-index: 998;
+z-index: 997;
 
 margin: 0 auto;
 
@@ -150,7 +150,7 @@ ${({
       : 'display: none;')};
 
       > li > ul {
-        z-index: 997;
+        z-index: 996;
       }
   }
 }
