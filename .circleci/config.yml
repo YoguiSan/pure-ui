@@ -32,4 +32,5 @@ workflows:
       - publish:
         filters:
           branches:
-            only: main
+            only:
+              - main

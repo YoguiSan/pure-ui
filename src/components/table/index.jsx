@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  element, oneOf, string, number,
-  oneOfType, shape, arrayOf, bool,
+  string, shape, arrayOf, bool,
 } from 'prop-types';
 
 import Title from '../title';
+import Grid, { Row, Column } from '../grid';
 
 import Container from './Container';
 
@@ -17,10 +17,15 @@ function Table({
   rows = TableDefaultProps.rows,
   headerBackground = TableDefaultProps.headerBackground,
   headerColor = TableDefaultProps.headerColor,
+  bordered = TableDefaultProps.bordered,
+  borderColor = TableDefaultProps.borderColor,
+  headerBordered = TableDefaultProps.headerBordered,
+  headerBorderColor = TableDefaultProps.headerBorderColor,
   striped = TableDefaultProps.striped,
   stripeColor = TableDefaultProps.stripeColor,
   background = TableDefaultProps.background,
   fontColor = TableDefaultProps.fontColor,
+  fullHeight = TableDefaultProps.fullHeight,
 }) {
   const tableHead = [];
 
@@ -83,13 +88,24 @@ function Table({
       stripeColor={stripeColor}
       background={background}
       fontColor={fontColor}
+      bordered={bordered}
+      borderColor={borderColor}
+      headerBordered={headerBordered}
+      headerBorderColor={headerBorderColor}
+      fullHeight={fullHeight}
     >
       {title
         ? (
-          <Title
-            type="h2"
-            text={title}
-          />
+          <Grid>
+            <Row narrow condensed>
+              <Column narrow condensed extraSmall={12}>
+                <Title
+                  type="h2"
+                  text={title}
+                />
+              </Column>
+            </Row>
+          </Grid>
         )
         : ''}
       <table
@@ -113,11 +129,16 @@ Table.defaultProps = TableDefaultProps;
 
 Table.propTypes = {
   id: string,
+  title: string,
   header: shape({}).isRequired,
   rows: arrayOf(shape({}).isRequired),
   headerBackground: string,
   headerColor: string,
   striped: bool,
+  bordered: bool,
+  headerBordered: bool,
+  borderColor: string,
+  headerBorderColor: string,
   stripeColor: string,
   background: string,
   fontColor: string,
