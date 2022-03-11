@@ -1,1 +1,1 @@
-export { default as TableDefaultProps } from './defaultProps.json';
+export { default as TableDefaultProps } from './defaultProps';

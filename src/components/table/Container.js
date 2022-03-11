@@ -7,44 +7,75 @@ import {
 
 export default Styles.div`
 width: 100%;
+
 ${({ background = 'none' }) => `background: ${background};`}
 ${CSSStyles.boxShadow()}
 
 ${Fonts.default}
 
-th, td {
-  padding: 1rem;
-}
+${({ fullHeight }) => `
+${
+  fullHeight
+    ? 'height: 100%'
+    : 'height: fit-content'
+}`};
 
-thead, tbody {
-  border-collapse: separate;
-  border-spacing: 0;
-}
+table {
+  width: 100%;
 
-thead {
-  ${({ headerBackground = 'none' }) => `background: ${headerBackground};`}
-  ${({ headerColor = 'black' }) => `color: ${headerColor};`}
-  border-bottom: solid 1px black;
-}
-
-tbody {
-  tr {
-  ${({
-    fontColor = 'black',
-    striped,
-    stripeColor = Colors.lightGray,
-  }) => `
-    color: ${fontColor};
+  th, td {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  thead, tbody {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  thead {
+    ${({ headerBackground = 'none' }) => `background: ${headerBackground};`}
+    ${({ headerColor = 'black' }) => `color: ${headerColor};`}
+    ${({
+      headerBordered,
+      headerBorderColor = 'black',
+    }) => `
     ${
-    striped
-      ? `&:nth-child(odd) {
-        background: ${stripeColor};
-      }`
-      : ''
-  }`}
+      headerBordered
+        ? `
+          border: solid 1px ${headerBorderColor};
+        `
+        : ''
+    }
+    `}
+  }
   
-    td {
-  
+  tbody {
+    tr {
+      ${({
+        fontColor = 'black',
+        striped,
+        stripeBackground = Colors.lightGray,
+        stripeColor = 'black',
+      }) => `
+        color: ${fontColor};
+        ${
+        striped
+          ? `&:nth-child(odd) {
+            color: ${stripeColor};
+            background: ${stripeBackground};
+          }`
+          : ''
+      }`}
+      td {
+        ${({ bordered, borderColor = 'black' }) => `
+          ${
+            bordered
+              ? `border: solid 1px ${borderColor};`
+              : ''
+          }
+        `}
+      }
     }
   }
 }

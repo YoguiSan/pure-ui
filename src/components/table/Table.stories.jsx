@@ -19,6 +19,11 @@ export default {
         type: 'array',
       },
     },
+    fullHeight: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 };
 
@@ -39,6 +44,7 @@ function Template(args) {
           <Table
             {...args}
             striped={false}
+            title="This is a table too, but not striped (oh I could never tell)"
             headerBackground="black"
             headerColor="white"
           />
@@ -53,6 +59,7 @@ export const table = Template.bind({});
 table.args = {
   ...TableDefaultProps,
   striped: true,
+  title: 'This is a table (oh for real?)',
   header: {
     id: 'ID',
     name: 'Name',
