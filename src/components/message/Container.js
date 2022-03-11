@@ -46,6 +46,8 @@ export default styles.div`
   margin: 0;
 }
 
+z-index: 1000;
+
   ${openAnimationFade}
   ${closeAnimationFade}
 
