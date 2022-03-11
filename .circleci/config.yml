@@ -30,7 +30,7 @@ workflows:
   publish-workflow:
     jobs:
       - publish:
-        filters:
-          branches:
-            only:
-              - main
+          filters:
+            branches:
+              only:
+                - main
