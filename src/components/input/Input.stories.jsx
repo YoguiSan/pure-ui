@@ -82,4 +82,19 @@ input.args = {
   name: 'input name',
   value: undefined,
   onChange: (event) => console.log(`I can handle this event. The current value is: ${event.target.value}`),
+  options: [
+    {
+      text: 'Ein',
+      value: 1,
+    }, {
+      text: 'Dós',
+      value: 2,
+    }, {
+      text: 'Three',
+      value: 3,
+    }, {
+      text: 'Quatro',
+      value: 4,
+    },
+  ],
 };

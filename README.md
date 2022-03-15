@@ -25,11 +25,11 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [X] File uploader
 - [X] TextArea
 - [X] Table
+- [X] Dropdown
 - [ ] Component documentation
 - [ ] Divider
 - [ ] Footer
 - [ ] Error wrapper
-- [ ] Dropdown
 - [ ] Link
 - [ ] Pagination
 - [ ] Progress indicator

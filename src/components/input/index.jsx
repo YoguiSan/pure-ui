@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  arrayOf, bool, func, oneOf, string, number,
+  arrayOf, bool, func, oneOf, string, number, shape,
 } from 'prop-types';
 
 import { InputDefaultProps, types, variants } from './assets/json';
@@ -20,6 +20,7 @@ function Input({
   register,
   fullWidth,
   rows = InputDefaultProps.rows,
+  options,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
 
@@ -48,6 +49,29 @@ function Input({
         onChange={onChange}
         rows={rows}
       />
+    );
+  } else if (
+    type === 'select'
+    || type === 'dropdown'
+  ) {
+    selectedInput = (
+      <select
+        name={componentName}
+        id={componentName}
+        label={label}
+        value={value}
+        {...register}
+        onChange={onChange}
+      >
+        {options.map(({ value: optionValue, text }) => (
+          <option
+            value={optionValue}
+            selected={optionValue === value}
+          >
+            {text}
+          </option>
+        ))}
+      </select>
     );
   } else {
     selectedInput = (
@@ -108,6 +132,10 @@ Input.propTypes = {
   register: func,
   fullWidth: bool,
   rows: number,
+  options: arrayOf(shape({
+    value: string.isRequired,
+    text: string.isRequired,
+  })),
 };
 
 export default Input;
