@@ -32,7 +32,8 @@ label {
 }
 
 &.${classPrefix}-underlined input,
-&.${classPrefix}-underlined textarea {
+&.${classPrefix}-underlined textarea,
+&.${classPrefix}-underlined select {
   &,
   &:active,
   &:focus,
@@ -43,7 +44,7 @@ label {
   }
 }
 
-input {
+input, textarea, select {
   padding: .5rem;
 
   &, &:focus {
