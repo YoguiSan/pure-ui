@@ -54,6 +54,7 @@ function Form({
     classes,
     required,
     errorMessage,
+    options,
   }) => inputList.push(
     <Column
       extraSmall={inputExtraSmall}
@@ -71,6 +72,7 @@ function Form({
         value={value}
         onChange={onChange}
         classes={classes}
+        options={options}
         error={errors[name]}
         errorMessage={errorMessage}
         fullWidth

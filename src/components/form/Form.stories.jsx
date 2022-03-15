@@ -107,6 +107,22 @@ form.args = {
       onChange: (event) => console.log('Textarea', event.target.value),
       required: false,
       rows: 5,
+    }, {
+      type: 'dropdown',
+      label: 'Select / Dropdown',
+      name: 'dropdown',
+      onChange: (event) => console.log('Dropdown', event.target.value),
+      required: false,
+      options: [{
+        text: 'One',
+        value: 1,
+      }, {
+        text: 'Zwei',
+        value: 2,
+      }, {
+        text: 'Três',
+        value: 3,
+      }],
     },
   ],
   childrenPosition: 'end',
