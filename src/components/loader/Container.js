@@ -56,6 +56,8 @@ ${({ modalBackground }) => (
   right: 0;
 
   > img {
+    min-width: 15%;
+    max-width: 100%;
     &.blinking {
       animation: blinking;
       animation-duration: 1s;
