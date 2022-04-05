@@ -25,15 +25,18 @@ ${Fonts.default}
     checked,
     checkedBackground = Colors.success,
     uncheckedBackground = Colors.error,
+    disabled,
   }) => `${checked
-    ? `background: ${checkedBackground};`
-    : `background: ${uncheckedBackground};`
+    ? (`background: ${checkedBackground};`)
+    : (`background: ${uncheckedBackground};`)}
+    ${disabled ? `background: ${Colors.gray};` : ''}
   }`}
 
   .pure-ui-toggle-switch {
+    ${({ disabled }) => (disabled ? 'opacity: .7;' : '')}
+    background: white;
     transition: all .2s;
 
-    background: white;
     border-radius: 10rem;
     bottom: 0;
 

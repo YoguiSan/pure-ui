@@ -15,6 +15,7 @@ function Toggle({
   key = ToggleDefaultProps.key,
   checkedBackground = ToggleDefaultProps.checkedBackground,
   uncheckedBackground = ToggleDefaultProps.uncheckedBackground,
+  disabled = ToggleDefaultProps.disabled,
 }) {
   const [isChecked, setIsChecked] = useState(checked);
 
@@ -29,6 +30,7 @@ function Toggle({
       checkedBackground={checkedBackground}
       uncheckedBackground={uncheckedBackground}
       key={key}
+      disabled={disabled}
     >
       <span>{text}</span>
       <label
@@ -45,6 +47,7 @@ function Toggle({
               ? onChange(event)
               : setIsChecked(!isChecked))
           }
+          disabled={disabled}
         />
       </label>
     </Container>

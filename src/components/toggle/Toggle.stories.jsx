@@ -40,4 +40,5 @@ export const toggle = Template.bind({});
 toggle.args = {
   ...ToggleDefaultProps,
   text: 'Another generic toggle component, do you like it?',
+  disabled: false,
 };
