@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { shape, func, arrayOf, bool, string } from 'prop-types';
+import {
+  shape, func, arrayOf, bool, string,
+} from 'prop-types';
 
 import Title from '../title';
 import Button from '../button';
@@ -16,16 +18,22 @@ function CookiesModal({
   setOpen = CookiesModalDefaultProps.setOpen,
   title = CookiesModalDefaultProps.title,
   description = CookiesModalDefaultProps.description,
-  acceptText = CookiesModalDefaultProps.acceptText,
-  rejectText = CookiesModalDefaultProps.rejectText,
-  savePreferences = CookiesModalDefaultProps.savePreferences,
-  customizeText = CookiesModalDefaultProps.customizeText,
-  customizeTitle = CookiesModalDefaultProps.customizeTitle,
-  readMoreText = CookiesModalDefaultProps.readMoreText,
-  readMoreUrl = CookiesModalDefaultProps.readMoreUrl,
+  acceptButtonText = CookiesModalDefaultProps.acceptButtonText,
   acceptButtonVariant = CookiesModalDefaultProps.acceptButtonVariant,
   acceptButtonFontColor = CookiesModalDefaultProps.acceptButtonFontColor,
-  acceptButtonBackgroundColor = CookiesModalDefaultProps.acceptButtonBackgroundColor,
+  acceptButtonColor = CookiesModalDefaultProps.acceptButtonColor,
+  rejectButtonText = CookiesModalDefaultProps.rejectButtonText,
+  rejectButtonVariant = CookiesModalDefaultProps.rejectButtonVariant,
+  rejectButtonColor = CookiesModalDefaultProps.rejectButtonColor,
+  rejectButtonFontColor = CookiesModalDefaultProps.rejectButtonFontColor,
+  confirmChoicesButtonText = CookiesModalDefaultProps.confirmChoicesButtonText,
+  confirmChoicesButtonColor = CookiesModalDefaultProps.confirmChoicesButtonColor,
+  confirmChoicesButtonFontColor = CookiesModalDefaultProps.confirmChoicesButtonFontColor,
+  customizeSettingsTitle = CookiesModalDefaultProps.customizeButtonTitle,
+  customizeButtonText = CookiesModalDefaultProps.customizeButtonText,
+  readMoreText = CookiesModalDefaultProps.readMoreText,
+  readMoreUrl = CookiesModalDefaultProps.readMoreUrl,
+  savePreferences = CookiesModalDefaultProps.savePreferences,
 }) {
   const [showCustomizationOptions, setShowCustomizationOptions] = useState(false);
   const [fieldStatus, setFieldStatus] = useState([]);
@@ -81,7 +89,7 @@ function CookiesModal({
 
   let buttonsWidth = 6;
 
-  if (rejectText && customizeText) {
+  if (rejectButtonText && customizeButtonText) {
     buttonsWidth = 4;
   }
 
@@ -94,7 +102,6 @@ function CookiesModal({
   }, [open]);
 
   useEffect(() => {
-    console.log('field status', fieldStatus)
     assembleFields(fieldStatus);
   }, [fieldStatus]);
 
@@ -161,26 +168,29 @@ function CookiesModal({
                 </Row>
                 <Row>
                   {
-                    rejectText && (
+                    rejectButtonText && (
                       <Column
                         small={12}
                         medium={buttonsWidth}
                       >
                         <Button
-                          text={rejectText}
+                          text={rejectButtonText}
+                          variant={rejectButtonVariant}
+                          color={rejectButtonColor}
+                          fontColor={rejectButtonFontColor}
                           onClick={() => processAllCookies('reject')}
                         />
                       </Column>
                     )
                   }
                   {
-                    customizeText && (
+                    customizeButtonText && (
                       <Column
                         small={12}
                         medium={buttonsWidth}
                       >
                         <Button
-                          text={customizeText}
+                          text={customizeButtonText}
                           onClick={() => setShowCustomizationOptions(true)}
                         />
                       </Column>
@@ -191,17 +201,16 @@ function CookiesModal({
                     medium={buttonsWidth}
                   >
                     <Button
-                      text={acceptText}
+                      text={acceptButtonText}
                       onClick={() => processAllCookies('accept')}
                       variant={acceptButtonVariant}
-                      color={acceptButtonBackgroundColor}
+                      color={acceptButtonColor}
                       fontColor={acceptButtonFontColor}
                     />
                   </Column>
                 </Row>
               </Row>
-            )
-            : (
+            ) : (
               <>
                 <Row>
                   <Column
@@ -210,7 +219,7 @@ function CookiesModal({
                   >
                     <Title
                       type="h2"
-                      text={customizeTitle}
+                      text={customizeSettingsTitle}
                     />
                   </Column>
                   <Column
@@ -219,6 +228,41 @@ function CookiesModal({
                   />
                 </Row>
                 {renderFields}
+                <Row>
+                  <Column
+                    extraSmall={4}
+                  >
+                    <Button
+                      text={rejectButtonText}
+                      variant={rejectButtonVariant}
+                      color={rejectButtonColor}
+                      fontColor={rejectButtonFontColor}
+                      onClick={() => processAllCookies('reject')}
+                    />
+                  </Column>
+                  <Column
+                    extraSmall={4}
+                  >
+                    <Button
+                      text={acceptButtonText}
+                      onClick={() => processAllCookies('accept')}
+                      variant={acceptButtonVariant}
+                      color={acceptButtonColor}
+                      fontColor={acceptButtonFontColor}
+                    />
+                  </Column>
+                  <Column
+                    extraSmall={4}
+                  >
+                    <Button
+                      text={confirmChoicesButtonText}
+                      onClick={() => processAllCookies()}
+                      variant={acceptButtonVariant}
+                      color={confirmChoicesButtonColor}
+                      fontColor={confirmChoicesButtonFontColor}
+                    />
+                  </Column>
+                </Row>
               </>
             )
         }
@@ -238,16 +282,23 @@ CookiesModal.propTypes = {
   open: bool,
   title: string,
   description: string,
-  acceptText: string,
-  rejectText: string,
-  savePreferences: func.isRequired,
-  customizeText: string,
-  customizeTitle: string,
-  readMoreText: string,
-  readMoreUrl: string,
+  acceptButtonText: string,
   acceptButtonVariant: string,
   acceptButtonFontColor: string,
-  acceptButtonBackgroundColor: string,
+  acceptButtonColor: string,
+  rejectButtonText: string,
+  rejectButtonVariant: string,
+  rejectButtonColor: string,
+  rejectButtonFontColor: string,
+  savePreferences: func.isRequired,
+  customizeButtonText: string,
+  confirmChoicesButtonText: string,
+  customizeSettingsTitle: string,
+  readMoreText: string,
+  readMoreUrl: string,
+  setOpen: bool,
+  confirmChoicesButtonColor: string,
+  confirmChoicesButtonFontColor: string,
 };
 
 export default CookiesModal;

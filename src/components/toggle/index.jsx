@@ -59,6 +59,10 @@ Toggle.propTypes = {
   styles: arrayOf(shape()),
   text: string,
   onChange: func,
+  key: string.isRequired,
+  checkedBackground: string,
+  uncheckedBackground: string,
+  disabled: bool,
 };
 
 Toggle.defaultProps = ToggleDefaultProps;

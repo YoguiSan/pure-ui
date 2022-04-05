@@ -1,1 +1,1 @@
-export { default as CookiesModalDefaultProps } from './defaultProps.json';
+export { default as CookiesModalDefaultProps } from './defaultProps';
