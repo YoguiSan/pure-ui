@@ -27,7 +27,7 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [X] Table
 - [X] Dropdown
 - [X] Toggle
-- [ ] Cookies modal
+- [X] Cookies modal
 - [ ] Component documentation
 - [ ] Divider
 - [ ] Footer

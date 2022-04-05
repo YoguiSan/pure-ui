@@ -19,3 +19,4 @@ export { default as Input } from './components/input';
 export { default as Form } from './components/form';
 export { default as Table } from './components/table';
 export { default as Toggle } from './components/toggle';
+export { default as CookiesModal } from './components/cookiesModal';
