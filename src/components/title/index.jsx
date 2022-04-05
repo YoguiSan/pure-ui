@@ -19,6 +19,7 @@ function Title({
   iconHeight,
   iconWidth,
   unit = 'px',
+  classes,
 }) {
   const tag = tags[type];
 

@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: install
-          command: "npm ci"
+          command: "npm ci --legacy-peer-deps"
       - run:
           name: Auth With NPM
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
