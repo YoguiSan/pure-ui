@@ -43,6 +43,7 @@ cookiesModal.args = {
   acceptText: 'Yes, I\'m a bit hungry',
   rejectText: 'I don\' like cookies',
   customizeText: 'What flavors do you have?',
+  customizeTitle: 'Cookie settings',
   fields: [{
     name: 'Mandatory cookies',
     key: 'mandatory',
@@ -52,4 +53,5 @@ cookiesModal.args = {
     name: 'Chocolate cookies',
     key: 'publicity',
   }],
+  open: true,
 };
