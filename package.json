@@ -1,6 +1,6 @@
 {
   "name": "pure-ui-react",
-  "version": "1.0.33",
+  "version": "1.1.0",
   "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
   "scripts": {
@@ -37,15 +37,15 @@
   "dependencies": {
     "'": "file:storybook/addon-knobs/register'",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@storybook/addon-controls": "^6.4.18",
+    "@storybook/addon-controls": "^6.5.16",
     "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/builder-webpack5": "^6.4.18",
-    "@storybook/manager-webpack5": "^6.4.18",
-    "@storybook/react": "^6.4.18",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "formatadores": "^1.5.2",
-    "jest": "^27.4.7",
+    "jest": "^27.5.1",
     "react-hook-form": "^7.26.1",
     "react-use-error-boundary": "^0.0.6",
     "storybook-addon-jsx": "^7.3.14",
@@ -56,15 +56,16 @@
   },
   "peerDependencies": {
     "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-is": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
-    "babel-jest": "^27.4.6",
+    "babel-jest": "^27.5.1",
     "commitizen": "^4.2.4",
     "concurrently": "^7.0.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -75,18 +76,21 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-storybook": "^0.5.6",
+    "eslint-plugin-storybook": "^0.6.11",
     "husky": "^7.0.4",
     "jest-sonar-reporter": "^2.0.0",
     "npm-cli-login": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
     "url-loader": "^4.1.1"
   },
   "setupFiles": [
     "./setupTests.js"
   ],
   "resolutions": {
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "config": {
     "commitizen": {

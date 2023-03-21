@@ -33,7 +33,7 @@ function Loader({
           alt="loader"
           src={randomIcon}
           className={`
-            ${classes.map((className) => `${className} `)}${
+            ${classes?.map((className) => `${className} `)}${
             blinking && 'blinking'
           }`}
         />
@@ -48,7 +48,7 @@ function Loader({
           alt="loader"
           src={icons[icon]}
           className={`
-            ${classes.map((className) => `${className} `)}${
+            ${classes?.map((className) => `${className} `)}${
             blinking && 'blinking'
           }`}
         />
@@ -58,7 +58,7 @@ function Loader({
           alt="loader"
           src={icon}
           className={`
-          ${classes.map((className) => `${className} `)}${
+          ${classes?.map((className) => `${className} `)}${
             spinning && 'spinning'}${
             blinking && 'blinking'
           }`}

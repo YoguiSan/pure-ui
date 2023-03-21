@@ -19,7 +19,7 @@ const animations = [
 ];
 
 export default Styles.div`
-${animations.map((animation) => animation)}
+${animations?.map((animation) => animation)}
 
 height: 100%;
 width: 100%;
