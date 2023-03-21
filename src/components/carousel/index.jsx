@@ -40,7 +40,7 @@ function Carousel({
       },
     };
 
-    return imageArray.map(
+    return imageArray?.map(
       (image, index) => (
         typeof (image) === 'object'
           ? (
@@ -131,7 +131,7 @@ function Carousel({
           </Column>
           <Column extraSmall={10}>
             {
-              images.map((img, index) => (
+              images?.map((img, index) => (
                 <Column
                   key={`button-column-${index + 1}`}
                   extraSmall={1}
@@ -173,14 +173,14 @@ function Carousel({
 Carousel.defaultProps = CarouselDefaultProps;
 Carousel.propTypes = {
   images: arrayOf(
-    oneOfType(
-      string
-      || shape({
+    oneOfType([
+      string,
+      shape({
         alt: string.isRequired,
         src: string.isRequired,
         caption: string,
       }),
-    ),
+    ]),
   ).isRequired,
   current: number,
   setCurrent: func,

@@ -63,7 +63,7 @@ function Input({
         {...register}
         onChange={onChange}
       >
-        {options.map(({ value: optionValue, text }) => (
+        {options?.map(({ value: optionValue, text }) => (
           <option
             value={optionValue}
             selected={optionValue === value}

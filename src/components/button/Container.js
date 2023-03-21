@@ -32,10 +32,10 @@ export default Styles.div`
 
     ${variant && variants[variant]}
 
-    ${Object.keys(styles).map((property) => (
+    ${Object.keys(styles)?.map((property) => (
     typeof (styles[property]) === 'object'
       ? (`${property} {
-          ${Object.keys(styles[property]).map((subProperty) => `${subProperty}: ${styles[property][subProperty]};`).join('\n')}
+          ${Object.keys(styles[property])?.map((subProperty) => `${subProperty}: ${styles[property][subProperty]};`).join('\n')}
         }`)
       : `${property}: ${styles[property]};`)).join('\n')}
   `}

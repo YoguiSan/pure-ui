@@ -4,6 +4,8 @@ A simple design system for React made with pure HTML tags and styled-components.
 
 **Note: this package isn't related to any others like @pureui/core or similars**
 
+## Links
+[GitHub repository](https://github.com/YoguiSan/pure-ui)
 ## To do
 
 - [X] Grid (row and column too)
@@ -47,3 +49,7 @@ A simple design system for React made with pure HTML tags and styled-components.
 - [ ] Slider
 - [ ] Skeleton
 - [ ] Search
+
+## Changelog
+
+- 2.0.0: updated React version to 18.2.0
