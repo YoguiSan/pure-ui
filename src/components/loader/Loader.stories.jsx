@@ -42,20 +42,18 @@ function Template(args) {
       <Title>
         All loaders downloaded from
         {' '}
-        <a href="https://icons8.com/">
-          https://icons8.com/
-        </a>
+        <a style={{ display: 'block', margin: '0 4px' }} href="https://icons8.com/">https://icons8.com/</a>
       </Title>
       <Title
         type="subtitle"
       >
         To test the "random" loader, please set it to
         {' '}
-        <i>undefined</i>
+        <i style={{ display: 'block', margin: '0 4px' }}>undefined</i>
         {' '}
         in the
         {' '}
-        <b>icon</b>
+        <b style={{ display: 'block', margin: '0 4px' }}>icon</b>
         {' '}
         section
       </Title>
