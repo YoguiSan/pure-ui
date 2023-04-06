@@ -1,6 +1,6 @@
 {
   "name": "pure-ui-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
   "scripts": {
@@ -35,20 +35,13 @@
   "author": "Nelson Salles de Barros Filho",
   "license": "ISC",
   "dependencies": {
-    "'": "file:storybook/addon-knobs/register'",
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "@storybook/addon-controls": "^6.5.16",
-    "@storybook/addon-knobs": "^6.4.0",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^6.5.16",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "formatadores": "^1.5.2",
     "jest": "^27.5.1",
     "react-hook-form": "^7.26.1",
     "react-use-error-boundary": "^0.0.6",
-    "storybook-addon-jsx": "^7.3.14",
     "styled-components": "^5.3.3",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
@@ -61,9 +54,15 @@
     "react-is": "^18.2.0"
   },
   "devDependencies": {
+    "'": "file:storybook/addon-knobs/register'",
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
+    "@storybook/addon-controls": "^6.5.16",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "babel-jest": "^27.5.1",
     "commitizen": "^4.2.4",
@@ -83,6 +82,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "storybook-addon-jsx": "^7.3.14",
     "url-loader": "^4.1.1"
   },
   "setupFiles": [
