@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+  import React, { useState, useEffect } from 'react';
 import {
-  arrayOf, oneOfType, shape, string, number, func,
+  arrayOf, oneOfType, shape, string, number, func, oneOf,
 } from 'prop-types';
 
 import Container from './Container';
@@ -60,6 +60,7 @@ function Carousel({
             />
           ) : (
             <Image
+              key={`image-${index + 1}`}
               src={image}
               styles={
                 (index === active
@@ -108,7 +109,7 @@ function Carousel({
 
   return (
     <Container
-      className={classes.join(' ')}
+      className={Array.isArray(classes) ? classes.join(' ') : classes}
     >
       <Grid>
         <Row>
@@ -184,7 +185,7 @@ Carousel.propTypes = {
   ).isRequired,
   current: number,
   setCurrent: func,
-  classes: arrayOf(string),
+  classes: oneOf([string, arrayOf(string)]),
 };
 
 export default Carousel;

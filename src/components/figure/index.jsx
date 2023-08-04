@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  number, string, shape, oneOf,
+  number, string, shape, oneOf, arrayOf,
 } from 'prop-types';
 
 import Container from './Container';
@@ -20,6 +20,7 @@ function Image({
   backgroundImage,
   styles,
   unit = 'px',
+  classes = [],
 }) {
   return (
     <Container
@@ -30,6 +31,11 @@ function Image({
       backgroundImage={backgroundImage}
       styles={styles}
       unit={unit}
+      className={
+        Array.isArray(classes)
+          ? classes.join(' ')
+          : classes
+      }
     >
       <img alt={alt} src={src} />
       {caption && (
@@ -52,6 +58,10 @@ Image.propTypes = {
   backgroundImage: string,
   styles: shape(),
   unit: oneOf(Units),
+  classes: oneOf([
+    string,
+    arrayOf(string),
+  ]),
 };
 
 export default Image;

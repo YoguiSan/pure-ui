@@ -59,6 +59,11 @@ export default {
         type: 'object',
       },
     },
+    classes: {
+      control: {
+        type: 'object',
+      },
+    },
   },
 };
 

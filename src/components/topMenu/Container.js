@@ -10,10 +10,23 @@ import {
 const menuStyles = '';
 
 export default Styles.header`
+display: flex;
+
 ${({ background = 'white' }) => `background: ${background};`}
 
 .pure-ui-menu-toggle-button {
   display: none;
+}
+
+a.pure-ui-top-menu-logo-container {
+  margin: 0;
+  width: fit-content;
+
+  > figure {
+    margin: 0;
+    padding: 0.6rem;
+    width: 3rem;
+  }
 }
 
 border-bottom: ${({ menuBorderBottom }) => `solid 1px ${menuBorderBottom}`};

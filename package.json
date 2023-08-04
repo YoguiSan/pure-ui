@@ -1,6 +1,6 @@
 {
   "name": "pure-ui-react",
-  "version": "1.1.1",
+  "version": "2.0.1",
   "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
   "scripts": {

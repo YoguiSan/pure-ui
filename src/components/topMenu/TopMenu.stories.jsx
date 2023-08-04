@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Logo from '../../images/logo.svg';
+
 import Grid, { Row, Column } from '../grid';
 import TopMenu from '.';
 
@@ -110,6 +112,9 @@ export const topMenu = Template.bind({});
 
 topMenu.args = {
   ...TopMenuDefaultProps,
+  logo: Logo,
+  logoAlt: 'Pure UI React',
+  logoHref: 'https://www.npmjs.com/package/pure-ui-react',
   menuItems: {
     Home: '/',
     'Structure Components': {

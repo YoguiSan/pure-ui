@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  object, objectOf, string, number, oneOf,
+  object, objectOf, string, number, oneOf, node,
 } from 'prop-types';
 
 import Button from '../button';
@@ -9,6 +9,7 @@ import { TopMenuDefaultProps } from './assets/json';
 import { Units } from '../assets/json';
 
 import Container from './Container';
+import Image from '../figure';
 
 const iterateMenuObject = (menuObject) => {
   const menu = [];
@@ -46,6 +47,9 @@ function TopMenu({
   menuItemColorHover = TopMenuDefaultProps.menuItemColorHover,
   unit = TopMenuDefaultProps.unit,
   background = TopMenuDefaultProps.background,
+  logo,
+  logoAlt = 'Home',
+  logoHref = '/',
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -74,6 +78,11 @@ function TopMenu({
         onClick={() => setMobileOpen(!mobileOpen)}
         classes={['pure-ui-menu-toggle-button']}
       />
+      {logo && (
+        <a href={logoHref} className="pure-ui-top-menu-logo-container">
+          <Image src={logo} alt={logoAlt} />
+        </a>
+      )}
       <ul>{menu}</ul>
     </Container>
   );
@@ -96,6 +105,9 @@ TopMenu.propTypes = {
   menuItemFontSize: number,
   unit: oneOf(Units),
   background: string,
+  logo: node,
+  logoAlt: string,
+  logoHref: string,
 };
 
 export default TopMenu;
