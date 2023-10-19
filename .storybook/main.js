@@ -1,7 +1,13 @@
 module.exports = {
   stories: ['../src/components/**/*.stories.@(js|jsx)'],
   addons: ['@storybook/addon-controls/register'],
-  core: {
-    builder: "webpack5"
+
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
   }
 };
