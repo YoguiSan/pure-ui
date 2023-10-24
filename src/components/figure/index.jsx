@@ -1,8 +1,14 @@
 import React from 'react';
 import {
-  number, string, shape, oneOf, arrayOf,
+  number,
+  string,
+  shape,
+  oneOf,
+  arrayOf,
+  func,
 } from 'prop-types';
 
+import Button from '../button';
 import Container from './Container';
 
 import { ImageDefaultProps } from './assets/json';
@@ -21,6 +27,9 @@ function Image({
   styles,
   unit = 'px',
   classes = [],
+  buttonText,
+  buttonOnClick,
+  buttonVariant,
 }) {
   return (
     <Container
@@ -38,8 +47,17 @@ function Image({
       }
     >
       <img alt={alt} src={src} />
-      {caption && (
-        <figcaption>{caption}</figcaption>
+      {(caption || buttonText) && (
+        <figcaption>
+          {caption || ''}
+          {buttonText && (
+            <Button
+              text={buttonText}
+              onClick={buttonOnClick}
+              variant={buttonVariant}
+            />
+          )}
+        </figcaption>
       )}
     </Container>
   );
@@ -62,6 +80,9 @@ Image.propTypes = {
     string,
     arrayOf(string),
   ]),
+  buttonText: string,
+  buttonOnClick: func,
+  buttonVariant: string,
 };
 
 export default Image;

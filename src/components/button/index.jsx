@@ -1,12 +1,12 @@
 import React from 'react';
 import {
   element, oneOf, string, func, objectOf, oneOfType, number,
+  arrayOf,
 } from 'prop-types';
 
 import Container from './Container';
 
 import { ButtonDefaultProps, variants } from './assets/json';
-import { arrayOf } from 'prop-types';
 
 function Button({
   variant = ButtonDefaultProps.variant,

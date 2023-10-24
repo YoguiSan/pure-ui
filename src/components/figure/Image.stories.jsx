@@ -64,6 +64,11 @@ export default {
         type: 'object',
       },
     },
+    buttonText: {
+      control: {
+        type: 'text',
+      },
+    },
   },
 };
 
@@ -101,4 +106,5 @@ image.args = {
   captionBackground: 'black',
   captionColor: 'white',
   backgroundImage: Prerigo,
+  buttonOnClick: () => alert('See? It works'),
 };
