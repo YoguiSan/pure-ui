@@ -3,8 +3,9 @@
   "version": "2.1.1",
   "description": "A pure and minimalistic design system for React, using only pure HTML elements and Styled Components",
   "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && cp ./src/types ./dist/types",
     "build:dev": "webpack --mode development",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm run test -- --watch",

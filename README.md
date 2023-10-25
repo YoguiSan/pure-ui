@@ -53,3 +53,5 @@ A simple design system for React made with pure HTML tags and styled-components.
 ## Changelog
 
 - 2.0.0: updated React version to 18.2.0
+- 2.1.0: image components now can have a button in their caption
+- 2.1.1: added type declarations
