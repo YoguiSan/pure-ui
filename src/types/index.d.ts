@@ -1,22 +1,22 @@
-import './components/accordion';
-import './components/button';
-import './components/card';
-import './components/carousel';
-import './components/cookiesModal';
-import './components/divider';
-import './components/figure';
-import './components/form';
-import './components/grid';
-import './components/input';
-import './components/loader';
-import './components/message';
-import './components/modal';
-import './components/progressBar';
-import './components/table';
-import './components/title';
-import './components/toggle';
-import './components/topMenu';
-
 declare namespace PureUI {
-
+  type Accordion = import('./components/accordion').Accordion;
+  type Button = import('./components/button').Button;
+  type Card = import('./components/card').Card;
+  type Carousel = import('./components/carousel').Carousel;
+  type CookiesModal = import('./components/cookiesModal').CookiesModal;
+  type Divider = import('./components/divider').Divider;
+  type Image = import('./components/figure').Image;
+  type Form = import('./components/form').Form;
+  type Grid = import('./components/grid').Grid;
+  type Row = import('./components/grid').Row;
+  type Column = import('./components/grid').Column;
+  type Input = import('./components/input').Input;
+  type Loader = import('./components/loader').Loader;
+  type Message = import('./components/message').Message;
+  type Modal = import('./components/modal').Modal;
+  type ProgressBar = import('./components/progressBar').ProgressBar;
+  type Table = import('./components/table').Table;
+  type Title = import('./components/title').Title;
+  type Toggle = import('./components/toggle').Accordion;
+  type TopMenu = import('./components/topMenu').TopMenu;
 }
