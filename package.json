@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production && -r ./src/types ./dist/types",
+    "build": "webpack --mode production && cp -r ./src/types ./dist/types",
     "build:dev": "webpack --mode development",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm run test -- --watch",
