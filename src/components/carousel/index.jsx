@@ -49,6 +49,9 @@ function Carousel({
               alt={image.alt}
               src={image.src}
               caption={image.caption}
+              buttonText={image.buttonText || null}
+              buttonOnClick={image.buttonOnclick || null}
+              buttonVariant={image.buttonVariant || null}
               styles={
                 (index === active
                 && styles.selected)
