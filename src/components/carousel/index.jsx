@@ -50,7 +50,7 @@ function Carousel({
               src={image.src}
               caption={image.caption}
               buttonText={image.buttonText || null}
-              buttonOnClick={image.buttonOnclick || null}
+              buttonOnClick={image.buttonOnClick || null}
               buttonVariant={image.buttonVariant || null}
               styles={
                 (index === active
