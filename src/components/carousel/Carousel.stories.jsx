@@ -54,14 +54,20 @@ carousel.args = {
       src: Target1,
       alt: 'Thug 1',
       caption: 'Thug 1',
+      buttonText: 'Shoot Me!',
+      buttonOnClick: () => 'Got \'em!',
     }, {
       src: Target2,
       alt: 'Thug 2',
       caption: 'Thug 2',
+      buttonText: 'Shoot Me!',
+      buttonOnClick: () => 'Got \'em!',
     }, {
       src: Target3,
       alt: 'Thug 3',
       caption: 'Thug 3',
+      buttonText: 'Shoot Me!',
+      buttonOnClick: () => 'Got \'em!',
     }, {
       src: Bystander1,
       alt: 'Lady',
