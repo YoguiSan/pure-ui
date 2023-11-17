@@ -56,3 +56,4 @@ A simple design system for React made with pure HTML tags and styled-components.
 - 2.1.0: image components now can have a button in their caption
 - 2.1.1: added type declarations
 - 2.1.2: carousel components now can have buttons in each image
+- 2.1.3: added Typescript as a dev dependency and used the compiler instead of manually specifying types
