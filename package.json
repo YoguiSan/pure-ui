@@ -21,7 +21,8 @@
     "publish:main": "git checkout main && git pull && npm run build && npm publish & git checkout develop",
     "push:publish": "npm run push && npm run merge:master && npm run publish:main",
     "patch:push": "npm version patch --no-git-tag-version && npm run push && npm run merge:master",
-    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish"
+    "patch:publish": "npm version patch --no-git-tag-version && npm run push:publish",
+    "run:compiler": "npx tsc"
   },
   "keywords": [
     "ui",
@@ -82,6 +83,7 @@
     "react-is": "^18.2.0",
     "storybook": "^7.5.1",
     "storybook-addon-jsx": "^7.3.14",
+    "typescript": "^5.2.2",
     "url-loader": "^4.1.1"
   },
   "setupFiles": [
