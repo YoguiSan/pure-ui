@@ -10,7 +10,7 @@ import {
 import { FlexDirectionOptions, JustifyContentOptions } from './assets/json';
 
 export const GridPropTypes = {
-  children: arrayOf(element).isRequired,
+  children: (element || arrayOf(element)).isRequired,
   condensed: bool,
   narrow: bool,
   noBoxSizing: bool,

@@ -160,7 +160,7 @@ Form.propTypes = {
     onChange: func,
     classes: arrayOf(string),
   })).isRequired,
-  children: arrayOf(element),
+  children: element || arrayOf(element),
   inputExtraSmall: number,
   inputSmall: number,
   inputMedium: number,
