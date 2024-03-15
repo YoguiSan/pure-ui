@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
-  arrayOf, bool, func, oneOf, string, number, shape,
+  arrayOf, bool, func, oneOf, string, number, shape, object,
 } from 'prop-types';
 
 import { InputDefaultProps, types, variants } from './assets/json';
@@ -21,6 +21,7 @@ function Input({
   fullWidth,
   rows = InputDefaultProps.rows,
   options,
+  parameters,
 }) {
   const [componentName, setComponentName] = useState(name || `pure-ui-input-${Date.now() / ((175124 * Math.random()) * Math.random())}`);
 
@@ -45,9 +46,10 @@ function Input({
         id={componentName}
         label={label}
         value={value}
-        {...register}
         onChange={onChange}
         rows={rows}
+        {...register}
+        {...parameters}
       />
     );
   } else if (
@@ -60,8 +62,9 @@ function Input({
         id={componentName}
         label={label}
         value={value}
-        {...register}
         onChange={onChange}
+        {...register}
+        {...parameters}
       >
         {options?.map(({ value: optionValue, text }) => (
           <option
@@ -81,8 +84,9 @@ function Input({
         type={type}
         label={label}
         value={value}
-        {...register}
         onChange={onChange}
+        {...register}
+        {...parameters}
       />
     );
   }
@@ -136,6 +140,7 @@ Input.propTypes = {
     value: string.isRequired,
     text: string.isRequired,
   })),
+  parameters: oneOf(arrayOf(object), arrayOf(string)),
 };
 
 export default Input;
