@@ -4,11 +4,15 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.js',
+  experiments: {
+    outputModule: true,
+  },
   externals: [nodeExternals()],
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs',
+    // libraryTarget: 'commonjs',
+    libraryTarget: 'module',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
