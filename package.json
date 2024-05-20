@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/lib/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production && npm run run:compiler && npm run copy:json",
+    "build": "webpack --mode production",
     "build:dev": "webpack-dev-server --mode development",
     "test": "jest --config ./jest.config.js",
     "test:watch": "npm run test -- --watch",
@@ -84,6 +84,7 @@
     "react-is": "^18.2.0",
     "storybook": "^7.5.1",
     "storybook-addon-jsx": "^7.3.14",
+    "tsc-hooks": "^1.1.2",
     "typescript": "^5.2.2",
     "url-loader": "^4.1.1",
     "webpack-dev-server": "^5.0.4"
