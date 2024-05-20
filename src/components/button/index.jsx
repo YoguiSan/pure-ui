@@ -1,6 +1,12 @@
 import React from 'react';
 import {
-  element, oneOf, string, func, objectOf, oneOfType, number,
+  element,
+  oneOf,
+  string,
+  func,
+  objectOf,
+  oneOfType,
+  number,
   arrayOf,
 } from 'prop-types';
 
